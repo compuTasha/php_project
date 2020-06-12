@@ -7,5 +7,7 @@ target 'php_project' do
 
   # Pods for php_project
  pod 'FSCalendar'
+ pod 'Alamofire', '~> 4.7'
+ pod "SwiftyXMLParser", :git => 'https://github.com/yahoojapan/SwiftyXMLParser.git'
  
 end

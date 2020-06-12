@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyXMLParser
 
 class TableViewController: UITableViewController, XMLParserDelegate {
 
