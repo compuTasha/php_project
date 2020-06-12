@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA02493CFB70018345D /* RealmSwift.framework */; };
+		86F87AA32493CFB90018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
+		86F87AA52493CFC80018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
+		86F87AA62493CFC80018345D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		86F87AA72493CFC80018345D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA02493CFB70018345D /* RealmSwift.framework */; };
+		86F87AA82493CFC80018345D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA02493CFB70018345D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE1C23A22493CBB000AFA8D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */; };
 		CE1C23A42493CBB000AFA8D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C23A32493CBB000AFA8D8 /* SceneDelegate.swift */; };
 		CE1C23A62493CBB000AFA8D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C23A52493CBB000AFA8D8 /* ViewController.swift */; };
@@ -15,7 +21,24 @@
 		CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1C23AC2493CBB300AFA8D8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		86F87AA92493CFC80018345D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				86F87AA82493CFC80018345D /* RealmSwift.framework in Embed Frameworks */,
+				86F87AA62493CFC80018345D /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		86F87AA02493CFB70018345D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		86F87AA12493CFB90018345D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		CE1C239E2493CBB000AFA8D8 /* php_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = php_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1C23A32493CBB000AFA8D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +54,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F87AA52493CFC80018345D /* Realm.framework in Frameworks */,
+				86F87AA32493CFB90018345D /* Realm.framework in Frameworks */,
+				86F87AA72493CFC80018345D /* RealmSwift.framework in Frameworks */,
+				86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86F87AA42493CFC80018345D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE1C23952493CBB000AFA8D8 = {
 			isa = PBXGroup;
 			children = (
+				86F87AA12493CFB90018345D /* Realm.framework */,
+				86F87AA02493CFB70018345D /* RealmSwift.framework */,
 				CE1C23A02493CBB000AFA8D8 /* php_project */,
 				CE1C239F2493CBB000AFA8D8 /* Products */,
+				86F87AA42493CFC80018345D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +114,7 @@
 				CE1C239A2493CBB000AFA8D8 /* Sources */,
 				CE1C239B2493CBB000AFA8D8 /* Frameworks */,
 				CE1C239C2493CBB000AFA8D8 /* Resources */,
+				86F87AA92493CFC80018345D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +324,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N8K22S85Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = php_project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +346,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8N8K22S85Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = php_project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
