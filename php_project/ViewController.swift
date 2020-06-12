@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyXMLParser
 
-class ViewController: UIViewController, XMLParserDelegate {
+class ViewController: UIViewController {
 
+    let key = "gm%2BdwQ8JPRsI4UOY0H2GnpG5dFW8G6RuFiPYQ0GGSFW26pySBSKHAvUhwthyUzEdmzjH6qHEQ2vuE%2FbX5RgYMQ%3D%3D"
+    let hospitalurl = "http://apis.data.go.kr/6260000/MedicInstitService&serviceKey"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-
 }
 
