@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004764312E0D156A084900FF /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA02493CFB70018345D /* RealmSwift.framework */; };
 		86F87AA32493CFB90018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
 		86F87AA52493CFC80018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
 		86F87AA02493CFB70018345D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		86F87AA12493CFB90018345D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		CE1C239E2493CBB000AFA8D8 /* php_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = php_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +50,7 @@
 		CE1C23AA2493CBB300AFA8D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1C23AD2493CBB300AFA8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1C23AF2493CBB300AFA8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 				86F87AA32493CFB90018345D /* Realm.framework in Frameworks */,
 				86F87AA72493CFC80018345D /* RealmSwift.framework in Frameworks */,
 				86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */,
+				004764312E0D156A084900FF /* Pods_php_project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,8 +72,19 @@
 		86F87AA42493CFC80018345D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				067CFDE14FEB8527E02979BC /* Pods_php_project.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C49D62B26C5D4A7BB388D7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */,
+				1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		CE1C23952493CBB000AFA8D8 = {
@@ -79,6 +95,7 @@
 				CE1C23A02493CBB000AFA8D8 /* php_project */,
 				CE1C239F2493CBB000AFA8D8 /* Products */,
 				86F87AA42493CFC80018345D /* Frameworks */,
+				8C49D62B26C5D4A7BB388D7E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,10 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1C23B22493CBB300AFA8D8 /* Build configuration list for PBXNativeTarget "php_project" */;
 			buildPhases = (
+				037B4AAEF8055AABB1B05F3B /* [CP] Check Pods Manifest.lock */,
 				CE1C239A2493CBB000AFA8D8 /* Sources */,
 				CE1C239B2493CBB000AFA8D8 /* Frameworks */,
 				CE1C239C2493CBB000AFA8D8 /* Resources */,
 				86F87AA92493CFC80018345D /* Embed Frameworks */,
+				CFD1E7E6E8CCF73396EE3C31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +189,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		037B4AAEF8055AABB1B05F3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-php_project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFD1E7E6E8CCF73396EE3C31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-php_project/Pods-php_project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-php_project/Pods-php_project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-php_project/Pods-php_project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE1C239A2493CBB000AFA8D8 /* Sources */ = {
@@ -320,6 +381,7 @@
 		};
 		CE1C23B32493CBB300AFA8D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -342,6 +404,7 @@
 		};
 		CE1C23B42493CBB300AFA8D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
