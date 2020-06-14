@@ -11,73 +11,39 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
 
-    /*
-     let path = "./Busan_hospital_data.json"
-     if let data = try String(contentsOfFile: path).data(using: .utf8) {
-         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
-     }
-
-     func insertOrUpdate(hospital: Data) {
-         let realm = try! Realm()
-         try! realm.write({
-             let newHospital = Hospital()
-             newHospital.name = hospital.name
-             newHospital.address = hospital.address
-             newHospital.xlocation = hospital.xlocation
-             newHospital.ylocation = hospital.ylocation
-             newHospital.telephone = hospital.telephone
-             newHospital.medinst = hospital.medinst
-             newHospital.subject = hospital.subject
-             
-             realm.add(newHospital)    })
-     }
-    */
-  
+    let data = DataLoader().hospitalData
     
      override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
      }
      
-    fileprivate func getData()
-    {
-        let url = URL(string: "http://apis.data.go.kr/6260000/MedicInstitService")!
-        
-        URLSession.shared.dataTask(with: url) {(data, response, error) in
-            
-            
-        }
-    }
     
-    struct HospitalJSON: Decodable {
-        let name: String
-        let address: String
-        let xlocation: Double
-        let ylocation: Double
-        let telephone: String
-        let medinst: String
-        let subject: String 
-    }
     
     // MARK: - Table view data source
-
+    
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
+    */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count
     }
 
-   /*
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath)
 
+        cell.textLabel?.text = data[indexPath.row].BIZPLC_NM
         // Configure the cell...
     
+        return cell
     }
-    */
+    
     
 
     /*
