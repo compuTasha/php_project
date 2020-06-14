@@ -9,14 +9,15 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var reviewTable: UITableView!
     
    // let realm = try! Realm()
-    //let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 2))
-    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
+    let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 2))
+    //let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,26 @@ class DetailViewController: UIViewController {
     
         print(query?.reviews)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        
+        return (query?.reviews.count)!
+    }
+    
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
+
+        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        let review = query?.reviews[indexPath.row]
+
+        cell.reviewTextView.text = review
+        
+        return cell
+    }
+    
     
     /*
     // MARK: - Navigation
