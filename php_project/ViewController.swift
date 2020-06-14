@@ -12,17 +12,21 @@ import RealmSwift
 
 class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
-    @IBOutlet weak var outputtext: UILabel!
+    
     @IBOutlet var calendar: FSCalendar!
+    @IBOutlet var outputtext: UILabel!
+    
     
   
     var memo : Results<HealthMemo>?
     var dateInfo: String = ""
+    var dateSelected: String = ""
+    var printStr: String = ""
     
     @IBAction func insert(_ sender: Any) {
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "오늘의 건강을 기록하세요", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "건강 상태를 기록하세요", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "추가하기", style: .default) { (action) in
             let new = HealthMemo()
             new.write = textField.text!
@@ -42,24 +46,26 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
     }
  
     let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 3))
+   // let dateSelected = HealthMemo()
 
-    
     func save(healthMemo: HealthMemo){
         print("save")
         do{
             try realm.write{
                 realm.add(healthMemo)
                
-                let result =  realm.objects(HealthMemo.self)
-                for item in result {
-                    print("name= \(item.write) date = \(item.date)")
-                }
-
+//                let result =  realm.objects(HealthMemo.self)
+//               print(result)
+                
+//                for item in result {
+//                    if dateSelected == item.date{
+//                        print("name= \(item.write) date = \(item.date)")
+//                    }
+//                }
             }
         }catch{
             print("error")
         }
-        //self.outputtext.reloadData()
     }
     
     override func viewDidLoad() {
@@ -70,23 +76,38 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
   
     }
     
-
-   // 날짜 선택 시 콜백 메소드
       public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
           let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-dd"
-        dateInfo = dateFormatter.string(from: date)
-        print(dateInfo)
         
-
+        dateSelected = dateFormatter.string(from: date)
+        dateInfo = dateFormatter.string(from: date)
+        
+        let result =  realm.objects(HealthMemo.self)
+        print(result)
+        
+        for item in result {
+            if dateSelected == item.date{
+                
+               printStr = item.write
+             
+                outputtext.text = outputtext.text! + printStr
+                print(outputtext.text!)
+                print("name= \(item.write) date = \(item.date)")
+                
+            }
+        }
+        //print(dateInfo)
        }
-
-
+    
+/*
+     내가 하고 싶은거:
+     DB에 저장된 date랑 dateSelected 값이 똑같으면 그때 db의 date가 같은 write만 출력하기, 그리고 스토리보드 라벨에 보여주기
+     */
 }
 
 
 class HealthMemo: Object {
-   
 
     @objc dynamic var date:String = ""
     @objc dynamic var write: String = ""

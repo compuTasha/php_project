@@ -235,17 +235,10 @@
                                     <action selector="insert:" destination="oBf-Dc-9Mk" eventType="touchUpInside" id="HeB-Qc-3aF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrL-Lp-nfi">
-                                <rect key="frame" x="66" y="558" width="282" height="144"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQy-H9-pIt">
+                                <rect key="frame" x="20" y="456" width="374" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-23-8DP">
-                                <rect key="frame" x="20" y="461" width="374" height="322"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -261,7 +254,7 @@
                     <navigationItem key="navigationItem" id="LXN-mt-DuE"/>
                     <connections>
                         <outlet property="calendar" destination="tYR-ey-rQt" id="80v-M8-fSj"/>
-                        <outlet property="outputtext" destination="GrL-Lp-nfi" id="R6j-cD-Lvd"/>
+                        <outlet property="outputtext" destination="XQy-H9-pIt" id="S4S-4s-N3q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zV-sK-sT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
