@@ -10,16 +10,6 @@ import UIKit
 import RealmSwift
 
 class TableViewController: UITableViewController {
-    
-    struct HospitalJSON {
-        let name: String = ""
-        let address: String = ""
-        let xlocation: Double = 0
-        let ylocation: Double = 0
-        let telephone: String = ""
-        let medinst: String = ""
-        let subject: String = ""
-    }
 
     /*
      let path = "./Busan_hospital_data.json"
@@ -49,7 +39,26 @@ class TableViewController: UITableViewController {
          // Do any additional setup after loading the view.
      }
      
-
+    fileprivate func getData()
+    {
+        let url = URL(string: "http://apis.data.go.kr/6260000/MedicInstitService")!
+        
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
+            
+            
+        }
+    }
+    
+    struct HospitalJSON: Decodable {
+        let name: String
+        let address: String
+        let xlocation: Double
+        let ylocation: Double
+        let telephone: String
+        let medinst: String
+        let subject: String 
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
