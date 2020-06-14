@@ -25,6 +25,7 @@
 		CE1C23AB2493CBB300AFA8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1C23AA2493CBB300AFA8D8 /* Assets.xcassets */; };
 		CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1C23AC2493CBB300AFA8D8 /* LaunchScreen.storyboard */; };
 		CE1C23B62494093300AFA8D8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C23B52494093300AFA8D8 /* TableViewController.swift */; };
+		CE92A65E24963E83003A0C11 /* Busan_hospital_data.json in Resources */ = {isa = PBXBuildFile; fileRef = CE92A65D24963E83003A0C11 /* Busan_hospital_data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		CE1C23AD2493CBB300AFA8D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1C23AF2493CBB300AFA8D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1C23B52494093300AFA8D8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CE92A65D24963E83003A0C11 /* Busan_hospital_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Busan_hospital_data.json; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 		CE1C23A02493CBB000AFA8D8 /* php_project */ = {
 			isa = PBXGroup;
 			children = (
+				CE92A65D24963E83003A0C11 /* Busan_hospital_data.json */,
 				CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */,
 				CE1C23A32493CBB000AFA8D8 /* SceneDelegate.swift */,
 				CE1C23A52493CBB000AFA8D8 /* ViewController.swift */,
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */,
+				CE92A65E24963E83003A0C11 /* Busan_hospital_data.json in Resources */,
 				CE1C23AB2493CBB300AFA8D8 /* Assets.xcassets in Resources */,
 				CE1C23A92493CBB000AFA8D8 /* Main.storyboard in Resources */,
 			);
