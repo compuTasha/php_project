@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01E566A82495E0440080218E /* HealthMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E566A72495E0440080218E /* HealthMemo.swift */; };
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
 		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,7 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01E566A72495E0440080218E /* HealthMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMemo.swift; sourceTree = "<group>"; };
 		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
 		60F5E49C24941318008C1592 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				CE1C23AC2493CBB300AFA8D8 /* LaunchScreen.storyboard */,
 				CE1C23AF2493CBB300AFA8D8 /* Info.plist */,
 				60F5E49C24941318008C1592 /* mapController.swift */,
-				01E566A72495E0440080218E /* HealthMemo.swift */,
 				869A46892496136400B9D9D5 /* Hospital.swift */,
 			);
 			path = php_project;
@@ -254,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1C23A62493CBB000AFA8D8 /* ViewController.swift in Sources */,
-				01E566A82495E0440080218E /* HealthMemo.swift in Sources */,
 				CE1C23A22493CBB000AFA8D8 /* AppDelegate.swift in Sources */,
 				CE1C23A42493CBB000AFA8D8 /* SceneDelegate.swift in Sources */,
 				60F5E49D24941318008C1592 /* mapController.swift in Sources */,
