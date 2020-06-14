@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,30 +16,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dXu-xP-Pd7">
-                                <rect key="frame" x="171.5" y="322.5" width="71" height="261"/>
+                                <rect key="frame" x="60.5" y="322.5" width="293" height="261"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-s5-UQw">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="61"/>
+                                        <rect key="frame" x="66.5" y="0.0" width="160" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title="약국"/>
+                                        <state key="normal" title=" 약국 찾기"/>
                                         <connections>
                                             <segue destination="hXd-fi-gmW" kind="show" id="ns4-rA-Wfa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7I-b3-Yiy">
-                                        <rect key="frame" x="0.0" y="100" width="71" height="61"/>
+                                        <rect key="frame" x="66.5" y="100" width="160" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title="병원"/>
+                                        <state key="normal" title=" 병원 찾기"/>
                                         <connections>
                                             <segue destination="PBx-RY-qtS" kind="show" id="W8Z-a6-sgX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-C2-FBy">
-                                        <rect key="frame" x="0.0" y="200" width="71" height="61"/>
+                                        <rect key="frame" x="0.0" y="200" width="293" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title="주기"/>
+                                        <state key="normal" title="건강정보 기록하기"/>
                                         <connections>
-                                            <segue destination="oBf-Dc-9Mk" kind="show" id="eWM-Au-NjP"/>
+                                            <segue destination="oBf-Dc-9Mk" kind="show" id="SIA-kL-KNO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vGh-pJ-eWT">
@@ -76,7 +76,7 @@
         <!--View Controller-->
         <scene sceneID="YI6-k7-GEy">
             <objects>
-                <viewController id="oBf-Dc-9Mk" sceneMemberID="viewController">
+                <viewController id="oBf-Dc-9Mk" customClass="ViewController" customModule="php_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Em-xg-hqH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,18 +89,28 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhF-ov-4vO">
-                                <rect key="frame" x="112" y="401" width="190" height="40"/>
+                                <rect key="frame" x="112" y="408" width="190" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="내 건강상태 기록하기"/>
+                                <connections>
+                                    <action selector="insert:" destination="oBf-Dc-9Mk" eventType="touchUpInside" id="HeB-Qc-3aF"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92r-dX-jce">
-                                <rect key="frame" x="20" y="449" width="374" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrL-Lp-nfi">
+                                <rect key="frame" x="66" y="558" width="282" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97754155207817561" green="1" blue="0.99849938411271577" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-23-8DP">
+                                <rect key="frame" x="20" y="461" width="374" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -111,6 +121,10 @@
                         <viewLayoutGuide key="safeArea" id="FzB-Xj-tBb"/>
                     </view>
                     <navigationItem key="navigationItem" id="LXN-mt-DuE"/>
+                    <connections>
+                        <outlet property="calendar" destination="tYR-ey-rQt" id="03c-Oe-B4k"/>
+                        <outlet property="outputtext" destination="GrL-Lp-nfi" id="R6j-cD-Lvd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zV-sK-sT4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
