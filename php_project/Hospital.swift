@@ -9,16 +9,6 @@
 import Foundation
 import RealmSwift
 
-class HospitalJSON {
-    var name: String = ""
-    var address: String = ""
-    var xlocation: Double = 0
-    var ylocation: Double = 0
-    var telephone: String = ""
-    var medinst: String = ""
-    var subject: String = ""
-}
-
 class Hospital: Object {
     @objc dynamic var name = ""
     @objc dynamic var address = ""
