@@ -11,7 +11,7 @@ import FSCalendar
 import RealmSwift
 
 class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
-    
+    /*
     let encoder = JSONEncoder()
     
     struct hospital: Codable {
@@ -23,11 +23,11 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         var medinst: String     // 의료기관종별명 ex.요양병원, 한방병원
         var sbjects: String      // 진료과목내용 ex. 내과, 가정의학과, 한방내과
     }
-    
+    */
     @IBOutlet weak var outputtext: UILabel!
     @IBOutlet var calendar: FSCalendar!
     
-  
+  /*
     var memo : Results<HealthMemo>?
     
     @IBAction func insert(_ sender: Any) {
@@ -70,7 +70,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         }
         //self.outputtext.reloadData()
     }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar?.allowsMultipleSelection = false
@@ -79,7 +79,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         // Do any additional setup after loading the view.
     }
     
-
+/*
    // 날짜 선택 시 콜백 메소드
       public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
           let dateFormatter = DateFormatter()
@@ -96,7 +96,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
            print(dateFormatter.string(from: date))
        }
 
-    
+    */
     
     
 }

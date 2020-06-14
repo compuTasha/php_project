@@ -16,11 +16,12 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var reviewTable: UITableView!
     
    // let realm = try! Realm()
-    let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 2))
+    let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 3))
     //let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // test data
         let data = Hospital()
@@ -52,6 +53,8 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
     
         print(query?.reviews)
+        
+        reviewTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,13 +66,11 @@ class DetailViewController: UIViewController, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
         let review = query?.reviews[indexPath.row]
-
-        cell.reviewTextView.text = review
-        
+        cell.textLabel!.text = review
         return cell
     }
     
