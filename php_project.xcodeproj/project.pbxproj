@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		004764312E0D156A084900FF /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		01E566A82495E0440080218E /* HealthMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E566A72495E0440080218E /* HealthMemo.swift */; };
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
+		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
+		869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A4687249612C100B9D9D5 /* DetailViewController.swift */; };
+		869A468A2496136400B9D9D5 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A46892496136400B9D9D5 /* Hospital.swift */; };
 		86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA02493CFB70018345D /* RealmSwift.framework */; };
 		86F87AA32493CFB90018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
 		86F87AA52493CFC80018345D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F87AA12493CFB90018345D /* Realm.framework */; };
@@ -32,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */,
 				86F87AA82493CFC80018345D /* RealmSwift.framework in Embed Frameworks */,
 				86F87AA62493CFC80018345D /* Realm.framework in Embed Frameworks */,
 			);
@@ -45,6 +49,8 @@
 		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
 		60F5E49C24941318008C1592 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
+		869A4687249612C100B9D9D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		869A46892496136400B9D9D5 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		86F87AA02493CFB70018345D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		86F87AA12493CFB90018345D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		CE1C239E2493CBB000AFA8D8 /* php_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = php_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +73,8 @@
 				86F87AA52493CFC80018345D /* Realm.framework in Frameworks */,
 				86F87AA32493CFB90018345D /* Realm.framework in Frameworks */,
 				86F87AA72493CFC80018345D /* RealmSwift.framework in Frameworks */,
+				869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */,
 				86F87AA22493CFB90018345D /* RealmSwift.framework in Frameworks */,
-				004764312E0D156A084900FF /* Pods_php_project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,7 @@
 				CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */,
 				CE1C23A32493CBB000AFA8D8 /* SceneDelegate.swift */,
 				CE1C23A52493CBB000AFA8D8 /* ViewController.swift */,
+				869A4687249612C100B9D9D5 /* DetailViewController.swift */,
 				CE1C23B52494093300AFA8D8 /* TableViewController.swift */,
 				CE1C23A72493CBB000AFA8D8 /* Main.storyboard */,
 				CE1C23AA2493CBB300AFA8D8 /* Assets.xcassets */,
@@ -125,6 +132,7 @@
 				CE1C23AF2493CBB300AFA8D8 /* Info.plist */,
 				60F5E49C24941318008C1592 /* mapController.swift */,
 				01E566A72495E0440080218E /* HealthMemo.swift */,
+				869A46892496136400B9D9D5 /* Hospital.swift */,
 			);
 			path = php_project;
 			sourceTree = "<group>";
@@ -250,7 +258,9 @@
 				CE1C23A22493CBB000AFA8D8 /* AppDelegate.swift in Sources */,
 				CE1C23A42493CBB000AFA8D8 /* SceneDelegate.swift in Sources */,
 				60F5E49D24941318008C1592 /* mapController.swift in Sources */,
+				869A468A2496136400B9D9D5 /* Hospital.swift in Sources */,
 				CE1C23B62494093300AFA8D8 /* TableViewController.swift in Sources */,
+				869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

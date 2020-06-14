@@ -17,5 +17,5 @@ class Hospital: Object {
     @objc dynamic var telephone = ""
     @objc dynamic var medinst = ""
     @objc dynamic var subject = ""
-    dynamic var reviews = [String]()
+    var reviews = List<String>()
 }
