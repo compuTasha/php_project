@@ -10,31 +10,34 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBOutlet var calendar: FSCalendar!
     @IBOutlet var outputtext: UILabel!
-    
+    @IBOutlet var memoTable: UITableView!
     
   
     var memo : Results<HealthMemo>?
     var dateInfo: String = ""
-    var dateSelected: String = ""
+    public var dateSelected: String = ""
     var printStr: String = ""
+    var visit : Array<Int> = []
+    var cnt: Int = 0
     
     @IBAction func insert(_ sender: Any) {
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "건강 상태를 기록하세요", message: "", preferredStyle: .alert)
+      
         let action = UIAlertAction(title: "추가하기", style: .default) { (action) in
             let new = HealthMemo()
             new.write = textField.text!
-            new.date = self.dateInfo
-       
+            new.date = self.dateSelected
 
             self.save(healthMemo: new)
         }
+        
+        let alert = UIAlertController(title: "건강 상태를 기록하세요", message: "", preferredStyle: .alert)
         alert.addTextField{
             (alertTextField) in
             textField = alertTextField
@@ -46,7 +49,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
     }
  
     let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 3))
-//
+
 //    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
     func save(healthMemo: HealthMemo){
@@ -66,43 +69,74 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         calendar?.allowsMultipleSelection = false
         calendar?.delegate = self
         calendar?.dataSource = self
-  
+        
+//        self.memoTable?.dataSource = self
+//        self.memoTable?.delegate = self
+
     }
     
-      public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
           let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-dd"
-        
-        dateSelected = dateFormatter.string(from: date)
+        cnt = 0
+        visit = []
         dateInfo = dateFormatter.string(from: date)
+        dateSelected = dateFormatter.string(from: date)
         
+        
+        print("calendar")
+        memoTable.reloadData()
+        
+       }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let result =  realm.objects(HealthMemo.self)
-        //reviewTable.reloadData()
-        
-        //print(result)
-        outputtext.text = ""
-       for item in result {
-            
-            if dateSelected == item.date{
-                 
-            
-                printStr = item.write
-             
-                outputtext.text = outputtext.text! + printStr
-                print(outputtext.text!)
-               
-                //print("name= \(item.write) date = \(item.date)")
-                
-            }
-            else{
-                //outputtext.text = ""
+        var num = 0
+        for i in 0...result.count-1
+        {
+            if dateSelected == result[i].date{
+               num = num+1
             }
         }
-        //print(dateInfo)
-       }
+        print("table1")
+        return num
+        
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath)
+        let result =  realm.objects(HealthMemo.self)
+        print(result)
+        cell.textLabel?.text = ""
+       print("table2")
+       
+        
+        
+        for i in cnt...result.count-1
+        {
+            if dateSelected == result[i].date{
+                visit.append(i)
+                
+                cnt = i+1
+                print("dataSelected")
+                print(dateSelected)
+                print()
+                print(result[i].date)
+                print(result[i].write)
+                printStr = result[i].write
+                cell.textLabel?.text = printStr
+                print(cell.textLabel?.text ?? "")
+                break
+            }
+            print(result[i])
+        }
+
+
+        
+        return cell
+    }
     
 }
-
 
 class HealthMemo: Object {
 
