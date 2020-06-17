@@ -30,7 +30,6 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         
         var query = realm.objects(Hospital.self).filter("name = %@", hospitalName).first
 
-        print("name", query?.name)
         nameLabel.text = query?.name
         addressLabel.text = query?.address
         telLabel.text = query?.telephone
@@ -45,7 +44,6 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         try! realm.write {
             query?.reviews.append(reviewTextView.text)
         }
-
         
         query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
     
@@ -71,6 +69,18 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+
+        if segue.identifier == "showMap" {
+            if let mapController = segue.destination as? mapController {
+                mapController.latitude = query?.latitude as! Double
+                mapController.longitude = query?.longitude as! Double
+                mapController.Title = query?.name as! String
+                mapController.subtitle = query?.address as! String
+            }
+        }
+    }
     
     /*
     // MARK: - Navigation

@@ -37,9 +37,6 @@ class TableViewController: UITableViewController {
             }
         }
 
-        
-        var query = realm.objects(Hospital.self).filter("name = %@", "(사)한국노년자원봉사회 동방요양병원").first
-        print(query?.name)
     }
      
     

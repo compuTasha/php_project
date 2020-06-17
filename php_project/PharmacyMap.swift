@@ -10,18 +10,20 @@ import UIKit
 import MapKit
 import CoreLocation
 class PharmacyMap: UIViewController, MKMapViewDelegate {
-        
-    let data = DataLoader().hospitalData
-        
+    
+    var data = DataLoader().hospitalData
+    var latitude: Double = 0    // 디비에서 쿼리해온 위도
+    var longitude: Double = 0 // 디비애서 쿼리해온 경도
+    var Title : String = ""  //디비에서 쿼리해온 이름
+    var subtitle = ""   //디비에서 쿼리해온 번호 or 주소
        
     @IBOutlet var mapView: MKMapView!
     
- 
     @IBAction func zoomIn(_ sender: Any) {
         
         let userLocation = mapView.userLocation//현재 위치 좌표, 남/북 2000미터 스팬
             
-        let region = MKCoordinateRegion(center: userLocation.location!.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        let region = MKCoordinateRegion(center: userLocation.location!.coordinate, latitudinalMeters: 0, longitudinalMeters: 0)
             mapView.setRegion(region, animated: true)
         }
 
@@ -95,11 +97,7 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
     //                   }
     //               })
     //           }
-        
-    let latitude = 35.8852934// 디비에서 쿼리해온 위도
-    let longitude = 128.6106305// 디비애서 쿼리해온 경도
-    let Title : String = "보은약국"//디비에서 쿼리해온 이름
-    let subtitle = "053-952-7785"//디비에서 쿼리해온 번호 or 주소
+
     
         override func viewDidLoad() {
             super.viewDidLoad()
