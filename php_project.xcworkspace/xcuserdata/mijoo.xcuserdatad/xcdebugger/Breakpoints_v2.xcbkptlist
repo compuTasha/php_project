@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8E83C27F-C023-41D6-B149-3C9EC23CC358"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A17E23C5-0A77-4811-9A3C-4103588B9ADE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "php_project/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A17E23C5-0A77-4811-9A3C-4103588B9ADE - f91cd047bbff99c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; php_project.ViewController"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "777">
+               </Location>
+               <Location
+                  uuid = "A17E23C5-0A77-4811-9A3C-4103588B9ADE - 4abae16a99d922f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;php_project.ViewController&gt;"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "743">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "php_project/HospitalData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "HospitalData"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D - add09ad4d65be81d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.HospitalData.init() -&gt; php_project.HospitalData"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/HospitalData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "505">
+               </Location>
+               <Location
+                  uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D - ed6de8836413213d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.HospitalData.init(from: Swift.Decoder) throws -&gt; php_project.HospitalData"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/HospitalData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

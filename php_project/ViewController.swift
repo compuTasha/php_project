@@ -14,7 +14,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
 
     
     @IBOutlet var calendar: FSCalendar!
-    @IBOutlet var outputtext: UILabel!
+   
     @IBOutlet var memoTable: UITableView!
     
   
@@ -91,12 +91,17 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let result =  realm.objects(HealthMemo.self)
         var num = 0
+        if(result.count<2){
+            return 1
+        }
+        
         for i in 0...result.count-1
         {
             if dateSelected == result[i].date{
                num = num+1
             }
         }
+        
         print("table1")
         return num
         
@@ -110,6 +115,9 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         cell.textLabel?.text = ""
        print("table2")
        
+        if(result.count<1){
+            return cell
+        }
         
         
         for i in cnt...result.count-1
@@ -134,6 +142,27 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
 
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            //let result =  realm.objects(HealthMemo.self)
+           // realm.delete(result[indexPath.row])
+
+            let realm = try! Realm()
+            let result =  realm.objects(HealthMemo.self)
+            let word = result[indexPath.row].write
+            let deleterow = realm.objects(HealthMemo.self).filter("write == %@", word).first
+
+            try! realm.write {
+                cnt = 0
+                realm.delete(deleterow!)
+            }
+
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+            print("1")
+             memoTable.reloadData()
+        }
     }
     
 }
