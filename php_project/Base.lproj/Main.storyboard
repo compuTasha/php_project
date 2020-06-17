@@ -261,6 +261,57 @@
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="714.50892857142856"/>
         </scene>
+        <!--Pharmacy Map-->
+        <scene sceneID="7tJ-ad-Zt7">
+            <objects>
+                <viewController id="Z1u-yH-D4a" customClass="PharmacyMap" customModule="php_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vXn-gU-XsA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Qi-bd-rpm">
+                                <rect key="frame" x="20" y="44" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="현재 위치"/>
+                                    <segment title="길찾기"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sgChangeLocation:" destination="Z1u-yH-D4a" eventType="valueChanged" id="xfL-3F-wdg"/>
+                                </connections>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-n5-cRH">
+                                <rect key="frame" x="20" y="82" width="374" height="735"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-qv-7Fi">
+                                <rect key="frame" x="0.0" y="830" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Zoom" id="DAG-Q4-ev4">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="Z1u-yH-D4a" id="3fk-l5-TuA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Type" id="51P-cR-z6e">
+                                        <connections>
+                                            <action selector="changeMapType:" destination="Z1u-yH-D4a" id="nIt-VU-sYH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Wbo-Zk-SPI"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="RqB-n5-cRH" id="ld7-5e-xFj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYa-K9-K3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="973.66071428571422"/>
+        </scene>
         <!--Map Controller-->
         <scene sceneID="OCl-RY-kiR">
             <objects>

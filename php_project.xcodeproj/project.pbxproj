@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F487902499FDC100784B10 /* PharmacyMap.swift */; };
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
 		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
+		60F487902499FDC100784B10 /* PharmacyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMap.swift; sourceTree = "<group>"; };
 		60F5E49C24941318008C1592 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
 		869A4687249612C100B9D9D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		869A46892496136400B9D9D5 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				869A46892496136400B9D9D5 /* Hospital.swift */,
 				CE856466249683B900D19B1C /* HospitalData.swift */,
 				CE856468249684E600D19B1C /* DataLoader.swift */,
+				60F487902499FDC100784B10 /* PharmacyMap.swift */,
 			);
 			path = php_project;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				CE1C23A42493CBB000AFA8D8 /* SceneDelegate.swift in Sources */,
 				CE856467249683B900D19B1C /* HospitalData.swift in Sources */,
 				60F5E49D24941318008C1592 /* mapController.swift in Sources */,
+				60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */,
 				869A468A2496136400B9D9D5 /* Hospital.swift in Sources */,
 				CE1C23B62494093300AFA8D8 /* TableViewController.swift in Sources */,
 				869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */,

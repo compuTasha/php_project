@@ -94,20 +94,22 @@ class mapController: UIViewController, MKMapViewDelegate {
 //               })
 //           }
     
+    let latitude = 35.884022// 디비에서 쿼리해온 위도
+    let longitude = 128.6215982// 디비애서 쿼리해온 경도
+    let Title : String = "대구파티마병원"//디비에서 쿼리해온 이름
+    let subtitle = "053-940-7114"//디비에서 쿼리해온 번호 or 주소
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         mapView.showsUserLocation = true
-        setAnnotation(latitudeValue: 35.884022, longitudeValue: 128.6215982, delta: 1, title: "대구파티마병원", subtitile: "053-940-7114")
+        setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 1, title: Title, subtitile: subtitle)
         // Do any additional setup after loading the view.
     }
     
     func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span : Double, title strTitle: String, subtitile strSubtitle:String)
     {
         let annotation = MKPointAnnotation()
-        //let latitude = 35.884022// 디비에서 쿼리해온 위도
-        //let longitude = 128.6215982// 디비애서 쿼리해온 경도
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeValue, longitude: longitudeValue)
         mapView.addAnnotation(annotation)
         annotation.title = strTitle//"대구파티마병원" //디비 쿼리 병원 이름
@@ -120,32 +122,32 @@ class mapController: UIViewController, MKMapViewDelegate {
     
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
-            setAnnotation(latitudeValue: 35.884022, longitudeValue: 128.6215982, delta: 1, title: "대구파티마병원", subtitile: "053-940-7114")
-//            mapThis(destinationCord: CLLocationCoordinate2D(latitude: 35.884022, longitude: 128.6215982))
+            setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 1, title: Title, subtitile: subtitle)
             
         }
         else if sender.selectedSegmentIndex == 1 {
-             mapThis(destinationCord: CLLocationCoordinate2D(latitude: 35.884022, longitude: 128.6215982))
+             mapThis(destinationCord: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
           
         }
     }
-        @IBAction func getDirectionTapped(_ sender: Any) {
-            getAddress()
-        }
-        func getAddress(){
-    //        let geoCoder = CLGeocoder()
-    //        geoCoder.geocodeAddressString(searchText.text!){
-    //            (placemarks, Error) in
-    //            guard let placemarks = placemarks, let location = placemarks.first?.location
-    //                else{
-    //                print("No Location Found")
-    //                return
-    //            }
-    //            print(location)
-    //        }
-            //애플맵 화난다ㅏㅏㅏㅏ
-            
-        }
+    
+//        @IBAction func getDirectionTapped(_ sender: Any) {
+//            getAddress()
+//        }
+//        func getAddress(){
+//        let geoCoder = CLGeocoder()
+//            geoCoder.geocodeAddressString(searchText.text!){
+//            (placemarks, Error) in
+//              guard let placemarks = placemarks, let location = placemarks.first?.location
+//                  else{
+//                   print("No Location Found")
+//                  return
+//              }
+//                print(location)
+//            }
+//            //애플맵 화난다ㅏㅏㅏㅏ
+//
+//        }
         func mapThis(destinationCord : CLLocationCoordinate2D) {
             let souceCordinate = (mapView.userLocation.coordinate)
             let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
