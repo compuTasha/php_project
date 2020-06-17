@@ -18,7 +18,7 @@ public class DataLoader {
     }
     func load() {
         
-        if let fileLocation = Bundle.main.url(forResource: "Busan_hospital_data", withExtension: "json") {
+        if let fileLocation = Bundle.main.url(forResource: "hospital_data", withExtension: "json") {
             
             // do catch in case of an error
             do {
