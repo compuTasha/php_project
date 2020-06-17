@@ -35,6 +35,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
             new.date = self.dateSelected
 
             self.save(healthMemo: new)
+            self.memoTable.reloadData()
         }
         
         let alert = UIAlertController(title: "건강 상태를 기록하세요", message: "", preferredStyle: .alert)
@@ -88,80 +89,98 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         memoTable.reloadData()
         
        }
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let result =  realm.objects(HealthMemo.self)
-        var num = 0
-        if(result.count<2){
-            return 1
-        }
+    
+      public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        let result =  realm.objects(HealthMemo.self)
+//        var num = 0
+//        if(result.count<2){
+//            return 1
+//        }
+//
+//        for i in 0...result.count-1
+//        {
+//            if dateSelected == result[i].date{
+//               num = num+1
+//            }
+//        }
+//
+//        print("table1")
+        let result = realm.objects(HealthMemo.self).filter("date = %@", dateSelected)
         
-        for i in 0...result.count-1
-        {
-            if dateSelected == result[i].date{
-               num = num+1
-            }
-        }
-        
-        print("table1")
-        return num
+        return (result.count)
         
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath)
-        let result =  realm.objects(HealthMemo.self)
+//        let result =  realm.objects(HealthMemo.self)
+//        print(result)
+//        cell.textLabel?.text = ""
+//       print("table2")
+//
+//        if(result.count<1){
+//            return cell
+//        }
+//
+//
+//        for i in cnt...result.count-1
+//        {
+//            if dateSelected == result[i].date{
+//                visit.append(i)
+//
+//                cnt = i+1
+//                print("dataSelected")
+//                print(dateSelected)
+//                print()
+//                print(result[i].date)
+//                print(result[i].write)
+//                printStr = result[i].write
+//                cell.textLabel?.text = printStr
+//                print(cell.textLabel?.text ?? "")
+//                break
+//            }
+//            print(result[i])
+//        }
+
+        let result = realm.objects(HealthMemo.self).filter("date = %@", dateSelected)
         print(result)
-        cell.textLabel?.text = ""
-       print("table2")
-       
-        if(result.count<1){
-            return cell
-        }
-        
-        
-        for i in cnt...result.count-1
-        {
-            if dateSelected == result[i].date{
-                visit.append(i)
-                
-                cnt = i+1
-                print("dataSelected")
-                print(dateSelected)
-                print()
-                print(result[i].date)
-                print(result[i].write)
-                printStr = result[i].write
-                cell.textLabel?.text = printStr
-                print(cell.textLabel?.text ?? "")
-                break
-            }
-            print(result[i])
-        }
-
-
+        cell.textLabel!.text = result[indexPath.row].write
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "FirstCell", for: indexPath)
+        
         if editingStyle == .delete{
             //let result =  realm.objects(HealthMemo.self)
            // realm.delete(result[indexPath.row])
+//
+//            let realm = try! Realm()
+//            let result =  realm.objects(HealthMemo.self)
+//            let word = result[indexPath.row].write
+//            let deleterow = realm.objects(HealthMemo.self).filter("write == %@", word).first
+//
+//            try! realm.write {
+//                cnt = 0
+//                realm.delete(deleterow!)
+//            }
+//
+//            tableView.deleteRows(at: [indexPath], with: .bottom)
+//            print("1")
+//             memoTable.reloadData()
 
             let realm = try! Realm()
-            let result =  realm.objects(HealthMemo.self)
-            let word = result[indexPath.row].write
-            let deleterow = realm.objects(HealthMemo.self).filter("write == %@", word).first
-
+            let test = realm.objects(HealthMemo.self).filter("date = %@", dateSelected)
+            let result = realm.objects(HealthMemo.self).filter("(date = %@) AND (write = %@)", dateSelected, test[indexPath.row].write).first
             try! realm.write {
-                cnt = 0
-                realm.delete(deleterow!)
+                realm.delete(result!)
             }
-
+            
             tableView.deleteRows(at: [indexPath], with: .bottom)
-            print("1")
-             memoTable.reloadData()
+            memoTable.reloadData()
+            
         }
     }
     
