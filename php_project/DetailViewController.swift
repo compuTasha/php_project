@@ -27,10 +27,10 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         var query = realm.objects(Hospital.self).filter("name = %@", hospitalName).first
 
-        print("name", hospitalName)
+        print("name", query?.name)
         nameLabel.text = query?.name
         addressLabel.text = query?.address
         telLabel.text = query?.telephone
