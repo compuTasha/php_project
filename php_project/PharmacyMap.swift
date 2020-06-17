@@ -5,25 +5,30 @@
 //  Created by sujin on 2020/06/17.
 //  Copyright © 2020 Mijoo Kim. All rights reserved.
 //
-
+ 
 import UIKit
 import MapKit
 import CoreLocation
+
 class PharmacyMap: UIViewController, MKMapViewDelegate {
     
-    var data = DataLoader().hospitalData
+    let data = DataLoader().pharmacyData
+    
     var latitude: Double = 0    // 디비에서 쿼리해온 위도
     var longitude: Double = 0 // 디비애서 쿼리해온 경도
     var Title : String = ""  //디비에서 쿼리해온 이름
     var subtitle = ""   //디비에서 쿼리해온 번호 or 주소
-       
+    
+    var locationManager:CLLocationManager!
+    
     @IBOutlet var mapView: MKMapView!
+    
     
     @IBAction func zoomIn(_ sender: Any) {
         
         let userLocation = mapView.userLocation//현재 위치 좌표, 남/북 2000미터 스팬
             
-        let region = MKCoordinateRegion(center: userLocation.location!.coordinate, latitudinalMeters: 0, longitudinalMeters: 0)
+        let region = MKCoordinateRegion(center: userLocation.location!.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
             mapView.setRegion(region, animated: true)
         }
 
@@ -104,7 +109,20 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
             mapView.delegate = self
             mapView.showsUserLocation = true
             
-            setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 1, title: Title, subtitile: subtitle)
+            for i in 0..<data.count {
+                                let insertData = Pharmacy()
+                                insertData.name = data[i].BIZPLC_NM
+                                insertData.address = data[i].REFINE_ROADNM_ADDR
+                                insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
+                                insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
+            //                    let coor = locationManager.location?.coordinate
+                                let myLocation = CLLocation(latitude: 37.401144 , longitude: 127.093328)
+                                let pharmacy = CLLocation(latitude: insertData.latitude, longitude: insertData.longitude)
+                                let distanceInMeters =  myLocation.distance(from: pharmacy)
+                               if(distanceInMeters <= 3000){
+                                setAnnotation(latitudeValue: insertData.latitude , longitudeValue: insertData.longitude, delta: 1, title: insertData.name, subtitile: insertData.address)
+                                }
+                            }
             // Do any additional setup after loading the view.
         }
         
@@ -121,14 +139,28 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation){
             mapView.centerCoordinate = userLocation.location!.coordinate
         }
-        
+    
+    
         @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
             if sender.selectedSegmentIndex == 0{
-             setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 1, title: Title, subtitile: subtitle)
+                for i in 0..<data.count {
+                    let insertData = Pharmacy()
+                    insertData.name = data[i].BIZPLC_NM
+                    insertData.address = data[i].REFINE_ROADNM_ADDR
+                    insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
+                    insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
+//                    let coor = locationManager.location?.coordinate
+                    let myLocation = CLLocation(latitude: 37.401144 , longitude: 127.093328)
+                    let pharmacy = CLLocation(latitude: insertData.latitude, longitude: insertData.longitude)
+                    let distanceInMeters =  myLocation.distance(from: pharmacy)
+                    if(distanceInMeters <= 3000){
+                    setAnnotation(latitudeValue: insertData.latitude , longitudeValue: insertData.longitude, delta: 1, title: insertData.name, subtitile: insertData.address)
+                    }
+                }
                 
             }
             else if sender.selectedSegmentIndex == 1 {
-                 mapThis(destinationCord: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+//                 mapThis(destinationCord: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
               
             }
         }
@@ -151,40 +183,40 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
     //            //애플맵 화난다ㅏㅏㅏㅏ
     //
     //        }
-            func mapThis(destinationCord : CLLocationCoordinate2D) {
-                let souceCordinate = (mapView.userLocation.coordinate)
-                let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
-                let destPlaceMark = MKPlacemark(coordinate: destinationCord)
-                
-                let sourceItem = MKMapItem(placemark: soucePlaceMark)
-                let destItem = MKMapItem(placemark: destPlaceMark)
-                
-                let destinationRequest = MKDirections.Request()
-                destinationRequest.source = sourceItem
-                destinationRequest.destination = destItem
-                destinationRequest.transportType = .automobile
-                destinationRequest.requestsAlternateRoutes = true
-                
-                let direction = MKDirections(request: destinationRequest)
-                direction.calculate { (response, error) in
-                    guard let response = response else {
-                        if let error = error {
-                            print("Something is wrong")
-                        }
-                        return
-                    }
-                    
-                    let route = response.routes[0]
-                    self.mapView.addOverlay(route.polyline)
-                    self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-                
-            }
-       }
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-            render.strokeColor = .blue
-            return render
-        }
+//            func mapThis(destinationCord : CLLocationCoordinate2D) {
+//                let souceCordinate = (mapView.userLocation.coordinate)
+//                let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
+//                let destPlaceMark = MKPlacemark(coordinate: destinationCord)
+//
+//                let sourceItem = MKMapItem(placemark: soucePlaceMark)
+//                let destItem = MKMapItem(placemark: destPlaceMark)
+//
+//                let destinationRequest = MKDirections.Request()
+//                destinationRequest.source = sourceItem
+//                destinationRequest.destination = destItem
+//                destinationRequest.transportType = .automobile
+//                destinationRequest.requestsAlternateRoutes = true
+//
+//                let direction = MKDirections(request: destinationRequest)
+//                direction.calculate { (response, error) in
+//                    guard let response = response else {
+//                        if let error = error {
+//                            print("Something is wrong")
+//                        }
+//                        return
+//                    }
+//
+//                    let route = response.routes[0]
+//                    self.mapView.addOverlay(route.polyline)
+//                    self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+//
+//            }
+//       }
+//        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//            let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+//            render.strokeColor = .blue
+//            return render
+//        }
     }
 
 
