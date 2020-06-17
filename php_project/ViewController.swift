@@ -46,22 +46,15 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
     }
  
     let realm = try! Realm(configuration: Realm.Configuration(schemaVersion: 3))
-   // let dateSelected = HealthMemo()
+//
+//    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
     func save(healthMemo: HealthMemo){
         print("save")
         do{
             try realm.write{
                 realm.add(healthMemo)
-               
-//                let result =  realm.objects(HealthMemo.self)
-//               print(result)
-                
-//                for item in result {
-//                    if dateSelected == item.date{
-//                        print("name= \(item.write) date = \(item.date)")
-//                    }
-//                }
+         
             }
         }catch{
             print("error")
@@ -84,26 +77,30 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
         dateInfo = dateFormatter.string(from: date)
         
         let result =  realm.objects(HealthMemo.self)
-        print(result)
+        //reviewTable.reloadData()
         
-        for item in result {
+        //print(result)
+        outputtext.text = ""
+       for item in result {
+            
             if dateSelected == item.date{
-                
-               printStr = item.write
+                 
+            
+                printStr = item.write
              
                 outputtext.text = outputtext.text! + printStr
                 print(outputtext.text!)
-                print("name= \(item.write) date = \(item.date)")
+               
+                //print("name= \(item.write) date = \(item.date)")
                 
+            }
+            else{
+                //outputtext.text = ""
             }
         }
         //print(dateInfo)
        }
     
-/*
-     내가 하고 싶은거:
-     DB에 저장된 date랑 dateSelected 값이 똑같으면 그때 db의 date가 같은 write만 출력하기, 그리고 스토리보드 라벨에 보여주기
-     */
 }
 
 
