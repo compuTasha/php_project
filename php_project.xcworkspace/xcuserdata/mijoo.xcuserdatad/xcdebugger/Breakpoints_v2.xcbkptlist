@@ -32,7 +32,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "731">
+                  offsetFromSymbolStart = "777">
                </Location>
                <Location
                   uuid = "A17E23C5-0A77-4811-9A3C-4103588B9ADE - 4abae16a99d922f4"
@@ -47,7 +47,55 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "697">
+                  offsetFromSymbolStart = "743">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "php_project/HospitalData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "HospitalData"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D - add09ad4d65be81d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.HospitalData.init() -&gt; php_project.HospitalData"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/HospitalData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "505">
+               </Location>
+               <Location
+                  uuid = "BFFB3D70-1408-456E-AD24-D88AE86D362D - ed6de8836413213d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "php_project.HospitalData.init(from: Swift.Decoder) throws -&gt; php_project.HospitalData"
+                  moduleName = "php_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mijoo/SwiftP/php_project/php_project/HospitalData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "400">
                </Location>
             </Locations>
          </BreakpointContent>
