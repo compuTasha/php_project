@@ -103,14 +103,15 @@ class mapController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span : Double, title strTitle: String, subtitile strSubtitle:String){
-    let annotation = MKPointAnnotation()
+    func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span : Double, title strTitle: String, subtitile strSubtitle:String)
+    {
+        let annotation = MKPointAnnotation()
         //let latitude = 35.884022// 디비에서 쿼리해온 위도
         //let longitude = 128.6215982// 디비애서 쿼리해온 경도
-    annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeValue, longitude: longitudeValue)
-    mapView.addAnnotation(annotation)
-    annotation.title = strTitle//"대구파티마병원" //디비 쿼리 병원 이름
-    annotation.subtitle = strSubtitle //"053-940-7114"//디비 쿼리 병원 번호
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitudeValue, longitude: longitudeValue)
+        mapView.addAnnotation(annotation)
+        annotation.title = strTitle//"대구파티마병원" //디비 쿼리 병원 이름
+        annotation.subtitle = strSubtitle //"053-940-7114"//디비 쿼리 병원 번호
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation){
