@@ -22,22 +22,24 @@ class TableViewController: UITableViewController {
         
         //print(data)
         
-        let insertData = Hospital()
-        
         for i in 0..<data.count {
+            var insertData = Hospital()
+            insertData.name = data[i].BIZPLC_NM
+            insertData.address = data[i].REFINE_ROADNM_ADDR
+            insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
+            insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
+            insertData.telephone = data[i].LOCPLC_FACLT_TELNO_DTLS
+            insertData.medinst = data[i].MEDINST_ASORTMT_NM
+            insertData.subject = data[i].TREAT_SBJECT_CONT_INFO
+            
             try! realm.write {
-                insertData.name = data[i].BIZPLC_NM
-                insertData.address = data[i].REFINE_ROADNM_ADDR
-                insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
-                insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
-                insertData.telephone = data[i].LOCPLC_FACLT_TELNO_DTLS
-                insertData.medinst = data[i].MEDINST_ASORTMT_NM
-                insertData.subject = data[i].TREAT_SBJECT_CONT_INFO
-                
                 realm.add(insertData)
             }
         }
 
+        
+        var query = realm.objects(Hospital.self).filter("name = %@", "(사)한국노년자원봉사회 동방요양병원").first
+        print(query?.name)
     }
      
     
@@ -68,10 +70,9 @@ class TableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            print(tableView.indexPathForSelectedRow?.row)
             if let detailController = segue.destination as? DetailViewController {
-                detailController.realm = realm
-                detailController.hospitalName = data[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
+                detailController.realm = self.realm
+                detailController.hospitalName = self.data[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
             }
         }
     }

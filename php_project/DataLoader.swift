@@ -31,9 +31,6 @@ public class DataLoader {
                     if(dataFromJson[i].REFINE_ROADNM_ADDR != "") {
                         self.hospitalData.append(dataFromJson[i])
                     }
-                    else {
-                        print(dataFromJson[i].BIZPLC_NM)
-                    }
                 }
                 
             } catch {
