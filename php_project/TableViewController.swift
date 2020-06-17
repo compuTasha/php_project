@@ -13,12 +13,32 @@ class TableViewController: UITableViewController {
 
     let data = DataLoader().hospitalData
     
+    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
+
+    
      override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
         
-        print(data)
-     }
+        //print(data)
+        
+        let insertData = Hospital()
+        
+        for i in 0..<data.count {
+            try! realm.write {
+                insertData.name = data[i].BIZPLC_NM
+                insertData.address = data[i].REFINE_ROADNM_ADDR
+                insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
+                insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
+                insertData.telephone = data[i].LOCPLC_FACLT_TELNO_DTLS
+                insertData.medinst = data[i].MEDINST_ASORTMT_NM
+                insertData.subject = data[i].TREAT_SBJECT_CONT_INFO
+                
+                realm.add(insertData)
+            }
+        }
+
+    }
      
     
     
@@ -46,7 +66,15 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            print(tableView.indexPathForSelectedRow?.row)
+            if let detailController = segue.destination as? DetailViewController {
+                detailController.realm = realm
+                detailController.hospitalName = data[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

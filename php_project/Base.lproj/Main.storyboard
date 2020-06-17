@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Riz-WC-vIF">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -78,7 +78,7 @@
             <objects>
                 <viewController id="l5l-3s-kW0" customClass="DetailViewController" customModule="php_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yON-54-PnE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu9-cF-Jtm" userLabel="address">
@@ -201,15 +201,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bsG-hc-FSa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YGc-Wl-f1U"/>
                     <connections>
                         <outlet property="addressLabel" destination="tgz-lx-mrJ" id="x4R-cl-CVN"/>
+                        <outlet property="medinstLabel" destination="StH-aW-kcM" id="nYp-2z-S53"/>
+                        <outlet property="nameLabel" destination="3hm-15-6eO" id="JCz-vV-aAl"/>
                         <outlet property="reviewTable" destination="JRy-xe-ZQt" id="55q-Mq-F34"/>
                         <outlet property="reviewTextView" destination="QXb-k3-qlY" id="mAv-vL-Dd9"/>
+                        <outlet property="subjectLabel" destination="piO-QH-vOw" id="Eio-4E-xSl"/>
+                        <outlet property="telLabel" destination="xsS-1b-UZ5" id="81y-PT-mRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEi-lF-Rs7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234.7826086956525" y="-402.45535714285711"/>
+            <point key="canvasLocation" x="3319" y="274"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YI6-k7-GEy">
@@ -407,6 +412,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="l5l-3s-kW0" kind="show" identifier="showDetail" id="Sjo-a1-eUJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

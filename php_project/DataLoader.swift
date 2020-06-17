@@ -26,7 +26,16 @@ public class DataLoader {
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([HospitalData].self, from: data)
                 
-                self.hospitalData = dataFromJson
+                // don't add if address is nil
+                for i in 0..<dataFromJson.count {
+                    if(dataFromJson[i].REFINE_ROADNM_ADDR != "") {
+                        self.hospitalData.append(dataFromJson[i])
+                    }
+                    else {
+                        print(dataFromJson[i].BIZPLC_NM)
+                    }
+                }
+                
             } catch {
                 print(error)
             }
