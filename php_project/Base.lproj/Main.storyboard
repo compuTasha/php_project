@@ -15,53 +15,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dXu-xP-Pd7">
-                                <rect key="frame" x="60.666666666666657" y="322.66666666666669" width="293" height="261.00000000000006"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-s5-UQw">
-                                        <rect key="frame" x="66.333333333333343" y="0.0" width="160" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title=" 약국 찾기"/>
-                                        <connections>
-                                            <action selector="button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPp-qH-qs4"/>
-                                            <segue destination="Z1u-yH-D4a" kind="show" id="Hl0-c0-S89"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7I-b3-Yiy">
-                                        <rect key="frame" x="66.333333333333343" y="100" width="160" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title=" 병원 찾기"/>
-                                        <connections>
-                                            <segue destination="Riz-WC-vIF" kind="show" id="VOG-bg-jBM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-C2-FBy">
-                                        <rect key="frame" x="0.0" y="199.99999999999994" width="293" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                        <state key="normal" title="건강정보 기록하기"/>
-                                        <connections>
-                                            <segue destination="oBf-Dc-9Mk" kind="show" id="SIA-kL-KNO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-bH-D1e">
-                                <rect key="frame" x="189" y="435" width="37" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8P-LG-Ubw">
+                                <rect key="frame" x="-96" y="270" width="303" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="155" minY="-80" maxX="-7" maxY="90"/>
+                                <state key="normal" title="약국 찾기" image="small_blue_med.png">
+                                    <color key="titleColor" red="0.52413487430000005" green="0.71946161990000002" blue="0.86277192830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z1u-yH-D4a" kind="show" id="293-ap-KAE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ3-8f-Xid">
+                                <rect key="frame" x="-111" y="592" width="318" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="163" minY="-80" maxX="0.0" maxY="100"/>
+                                <state key="normal" title="건강 기록" image="small_blue_cal.png">
+                                    <color key="titleColor" red="0.52413487430000005" green="0.71946161990000002" blue="0.86277192830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oBf-Dc-9Mk" kind="show" id="sm6-hz-pFg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxz-cU-2yg">
+                                <rect key="frame" x="45" y="412" width="293" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="146" minY="-80" maxX="-10" maxY="90"/>
+                                <state key="normal" title="병원 찾기" image="small_blue_hos.png">
+                                    <color key="titleColor" red="0.52413487430000005" green="0.71946161990000002" blue="0.86277192830000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Riz-WC-vIF" kind="show" id="th9-di-mez"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="dXu-xP-Pd7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Mfj-3r-8iQ"/>
-                            <constraint firstItem="dXu-xP-Pd7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="auF-aH-fwX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="button1" destination="CIb-s5-UQw" id="rMU-Jo-OXx"/>
-                        <outlet property="spinner" destination="rjb-bH-D1e" id="G8H-mz-cl4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -513,4 +506,9 @@
             <point key="canvasLocation" x="2457.971014492754" y="273.88392857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="small_blue_cal.png" width="202" height="202"/>
+        <image name="small_blue_hos.png" width="201" height="200"/>
+        <image name="small_blue_med.png" width="203" height="201"/>
+    </resources>
 </document>
