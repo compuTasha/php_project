@@ -33,6 +33,9 @@ class DetailViewController: UIViewController, UITableViewDataSource {
         medinstLabel.text = query?.medinst
         subjectLabel.text = query?.subject
         
+        reviewTextView.frame.size.height = 374
+        reviewTextView.frame.size.width = 133
+        
 //        nameLabel.sizeToFit()
 //        addressLabel.sizeToFit()
 //        telLabel.sizeToFit()
