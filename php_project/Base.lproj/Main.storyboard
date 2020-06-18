@@ -348,15 +348,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WOZ-nB-ZBf">
-                                <rect key="frame" x="20" y="96" width="374" height="668"/>
+                                <rect key="frame" x="20" y="55" width="374" height="709"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tOd-FN-0JU">
-                                <rect key="frame" x="20" y="54" width="234" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnD-4N-MYW">
                                 <rect key="frame" x="0.0" y="764" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -384,27 +378,18 @@
                                     <action selector="sgChangeLocation:" destination="PBx-RY-qtS" eventType="valueChanged" id="67X-4y-847"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVe-Lf-1zL">
-                                <rect key="frame" x="245" y="54" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get direction"/>
-                                <connections>
-                                    <action selector="getDirectionTapped:" destination="PBx-RY-qtS" eventType="touchUpInside" id="UHs-pN-vRM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="fZr-eN-gSy"/>
                     </view>
                     <navigationItem key="navigationItem" id="nwh-3J-QNM"/>
                     <connections>
-                        <outlet property="getdirectionbutton" destination="aVe-Lf-1zL" id="whS-J1-Ypb"/>
                         <outlet property="mapView" destination="WOZ-nB-ZBf" id="gFe-R5-V2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM7-d4-63b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4181" y="274"/>
+            <point key="canvasLocation" x="4179.7101449275369" y="273.88392857142856"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dZq-fR-MZB">

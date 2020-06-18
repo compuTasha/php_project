@@ -19,6 +19,7 @@ class mapController: UIViewController, MKMapViewDelegate {
     var subtitle = ""   //디비에서 쿼리해온 번호 or 주소
     
     @IBOutlet var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     @IBAction func zoomIn(_ sender: Any) {
     
@@ -41,67 +42,15 @@ class mapController: UIViewController, MKMapViewDelegate {
         
     }
    
-    
- 
-    @IBOutlet var searchText: UITextField!
-    
-    @IBOutlet var getdirectionbutton: UIButton!
-    
-
-    //var matchingItems: [MKMapItem] = [MKMapItem]()
-    
-//    @IBAction func textFieldReturn(_ sender: Any)
-//    {
-//        resignFirstResponder()
-//        mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
-//        self.performSearch()
-//
-//    }
-//
-//    func performSearch()  {
-//         // 배열 값 삭제
-//        matchingItems.removeAll()
-//        let request = MKLocalSearch.Request()
-//        // 텍스트 필드의 값으로 초기화된 MKLocalSearchRequest 인스턴스를 생성
-//        request.naturalLanguageQuery = searchText.text
-//        request.region = mapView.region
-//        // 검색 요청 인스턴스에 대한 참조체로 초기화
-//        let search = MKLocalSearch(request: request)
-//        // MKLocalSearchCompletionHandler 메서드가 호출되면서 검색이 시작
-//        search.start(completionHandler: {(response: MKLocalSearch.Response!, error: Error!) in
-//                   if error != nil {
-//                       print("Error occured in search: \(error.localizedDescription)")
-//                   } else if response.mapItems.count == 0 {
-//                       print("No matches found")
-//                   } else {
-//                       print("Matches found")
-//                       // 일치된 값이 있다면 일치된 위치에 대한 mapItem 인스턴스의 배열을 가지고 mapItem 속성에 접근한다.
-//                       for item in response.mapItems as [MKMapItem] {
-//                           if item.name != nil {
-//                               print("Name = \(item.name!)")
-//                           }
-//                           if item.phoneNumber != nil {
-//                               print("Phone = \(item.phoneNumber!)")
-//                           }
-//
-//                           self.matchingItems.append(item as MKMapItem)
-//                           print("Matching items = \(self.matchingItems.count)")
-//                           // 맵에 표시할 어노테이션 생성
-//                           let annotation = MKPointAnnotation()
-//                           // 위치에 어노테이션을 표시
-//                           annotation.coordinate = item.placemark.coordinate
-//                           annotation.title = item.name
-//                           annotation.subtitle = item.phoneNumber
-//                           self.mapView.addAnnotation(annotation)
-//                       }
-//                   }
-//               })
-//           }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        mapView.showsUserLocation = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest//정확도 최고로 설정
+        locationManager.requestWhenInUseAuthorization()//위치데이터 추적위해 사용자에게 승인요구
+        locationManager.startUpdatingLocation()//위치업데이트 시작
+        mapView.showsUserLocation = true//위치 보기
+
         setAnnotation(latitudeValue: latitude, longitudeValue: longitude, delta: 1, title: Title, subtitile: subtitle)
         // Do any additional setup after loading the view.
     }
@@ -130,23 +79,6 @@ class mapController: UIViewController, MKMapViewDelegate {
         }
     }
     
-//        @IBAction func getDirectionTapped(_ sender: Any) {
-//            getAddress()
-//        }
-//        func getAddress(){
-//        let geoCoder = CLGeocoder()
-//            geoCoder.geocodeAddressString(searchText.text!){
-//            (placemarks, Error) in
-//              guard let placemarks = placemarks, let location = placemarks.first?.location
-//                  else{
-//                   print("No Location Found")
-//                  return
-//              }
-//                print(location)
-//            }
-//            //애플맵 화난다ㅏㅏㅏㅏ
-//
-//        }
         func mapThis(destinationCord : CLLocationCoordinate2D) {
             let souceCordinate = (mapView.userLocation.coordinate)
             let soucePlaceMark = MKPlacemark(coordinate: souceCordinate)
