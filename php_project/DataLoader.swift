@@ -12,7 +12,7 @@ public class DataLoader {
     
     @Published var hospitalData = [HospitalData]()
     @Published var pharmacyData = [PharmacyData]()
-    @Published var emergencyData = [PharmacyData]()
+    @Published var emergencyData = [EmergencyData]()
     
     init() {
         load()
@@ -49,11 +49,8 @@ public class DataLoader {
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([PharmacyData].self, from: data)
                 
-                // don't add if address is nil
                 for i in 0..<dataFromJson.count {
-                    if(dataFromJson[i].REFINE_ROADNM_ADDR != "") {
                         self.pharmacyData.append(dataFromJson[i])
-                    }
                 }
                 
             } catch {

@@ -36,6 +36,7 @@
 		CE90D8FB249A3B8600725991 /* PharmacyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FA249A3B8600725991 /* PharmacyData.swift */; };
 		CE90D8FD249A3BEB00725991 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FC249A3BEB00725991 /* Pharmacy.swift */; };
 		CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */; };
+		CE90D901249BCB7200725991 /* EmergencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D900249BCB7200725991 /* EmergencyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +83,7 @@
 		CE90D8FA249A3B8600725991 /* PharmacyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyData.swift; sourceTree = "<group>"; };
 		CE90D8FC249A3BEB00725991 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
 		CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emergency_pharmacy.json; sourceTree = "<group>"; };
+		CE90D900249BCB7200725991 /* EmergencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyData.swift; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				60F5E49C24941318008C1592 /* mapController.swift */,
 				869A46892496136400B9D9D5 /* Hospital.swift */,
 				CE90D8FC249A3BEB00725991 /* Pharmacy.swift */,
+				CE90D900249BCB7200725991 /* EmergencyData.swift */,
 				CE856466249683B900D19B1C /* HospitalData.swift */,
 				CE856468249684E600D19B1C /* DataLoader.swift */,
 				60F487902499FDC100784B10 /* PharmacyMap.swift */,
@@ -305,6 +308,7 @@
 				CE90D8FD249A3BEB00725991 /* Pharmacy.swift in Sources */,
 				60F48797249BC2C700784B10 /* InitViewController.swift in Sources */,
 				60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */,
+				CE90D901249BCB7200725991 /* EmergencyData.swift in Sources */,
 				869A468A2496136400B9D9D5 /* Hospital.swift in Sources */,
 				CE1C23B62494093300AFA8D8 /* TableViewController.swift in Sources */,
 				869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */,
