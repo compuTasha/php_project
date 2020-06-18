@@ -7,12 +7,23 @@
 //
 
 import Foundation
+import CoreLocation
+
 
 public class DataLoader {
     
     @Published var hospitalData = [HospitalData]()
     @Published var pharmacyData = [PharmacyData]()
     @Published var emergencyData = [EmergencyData]()
+    
+//    var latitude: CLLocationDegrees = 0
+//    var longitude: CLLocationDegrees = 0
+//    var mylocation: CLLocation {
+//        return CLLocation(latitude: self.latitude, longitude: self.longitude)
+//    }
+//    var lati: Double = 37.2839294
+//    var longi: Double = 127.0762599
+    var mylocation = CLLocation(latitude: 37.2839294, longitude: 127.0762599)
     
     init() {
         load()
@@ -79,9 +90,29 @@ public class DataLoader {
         }
     }
     
+    func distance(to location: CLLocation) -> CLLocationDistance {
+        return location.distance(from: self.mylocation)
+    }
+    
     // 여기서 내 위치 기준으로 정렬할 수 있을 거 같음, 지금은 이름으로 정렬
     func sort() {
-        self.hospitalData = self.hospitalData.sorted(by: { $0.BIZPLC_NM < $1.BIZPLC_NM})
+//        self.hospitalData = self.hospitalData.sorted(by: { $0.BIZPLC_NM < $1.BIZPLC_NM})
 //        self.pharmacyData = self.pharmacyData.sorted(by: { $0.BIZPLC_NM < $1.BIZPLC_NM})
+
+        for i in 0..<hospitalData.count {
+            let lat = (hospitalData[i].REFINE_WGS84_LAT as NSString).doubleValue
+            print(lat)
+            let long = (hospitalData[i].REFINE_WGS84_LOGT as NSString).doubleValue
+            print(long)
+            let tempLocation = CLLocation(latitude: lat, longitude: long)
+            print(tempLocation)
+            let meter = distance(to: tempLocation)
+            print(meter)
+            hospitalData[i].SPECL_AMBLNC_VCNT = String(meter * 0.001)
+        }
+        
+        for i in 0..<hospitalData.count {
+            self.hospitalData = self.hospitalData.sorted(by: { $0.SPECL_AMBLNC_VCNT < $1.SPECL_AMBLNC_VCNT})
+        }
     }
 }

@@ -93,7 +93,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         cell.box.layer.shadowOpacity = 0.07
         cell.box.layer.shadowRadius = 1.5
         cell.nameLabel.text = filteredData[indexPath.row].BIZPLC_NM
-        cell.distanceLabel.text = "1.0km"
+        cell.distanceLabel.text = filteredData[indexPath.row].SPECL_AMBLNC_VCNT + "km"
         cell.subjectLabel.text = filteredData[indexPath.row].TREAT_SBJECT_CONT_INFO
         
         // Configure the cell...

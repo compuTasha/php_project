@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct HospitalData: Codable {
     var BIZPLC_NM: String = ""
