@@ -96,7 +96,7 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
             if sender.selectedSegmentIndex == 0{
                 mapView.removeAnnotations(mapView.annotations)
                 let coor = locationManager.location?.coordinate
-                let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
+                let myLocation = CLLocation(latitude: coor?.latitude ?? 37.2839294 , longitude: coor?.longitude ?? 127.076259)
                     for i in 0..<data.count {
                         let insertData = Pharmacy()
                             insertData.name = data[i].BIZPLC_NM
