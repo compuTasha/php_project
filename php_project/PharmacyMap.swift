@@ -13,6 +13,7 @@ import CoreLocation
 class PharmacyMap: UIViewController, MKMapViewDelegate {
     
     let data = DataLoader().pharmacyData
+    let data1 = DataLoader().emergencyData
     
     var latitude: Double = 0    // 디비에서 쿼리해온 위도
     var longitude: Double = 0 // 디비애서 쿼리해온 경도
@@ -105,13 +106,23 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
                 
             }
             else if sender.selectedSegmentIndex == 1 {
-//                 mapThis(destinationCord: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
-              
+                 mapView.removeAnnotations(mapView.annotations)
+//                for i in 0..<data1.count {
+//                        let insertData1 = Pharmacy()
+//                            insertData1.name = data1[i].BIZPLC_NM
+//                            insertData1.address = data1[i].REFINE_ROADNM_ADDR
+//                            insertData1.latitude = (data1[i].REFINE_WGS84_LAT as NSString).doubleValue
+//                            insertData1.longitude = (data1[i].REFINE_WGS84_LOGT as NSString).doubleValue
+//
+//                            setAnnotation(latitudeValue: insertData1.latitude , longitudeValue: insertData1.longitude, delta: 1, title: insertData1.name, subtitile: insertData1.address)
+//                        }
+                setAnnotation(latitudeValue: 37.391218, longitudeValue: 126.955063, delta: 1, title: "새봄 온누리 약국", subtitile: "야야야")
+                }
             }
         }
   
     
 
 
-}
+
 

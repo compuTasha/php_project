@@ -12,10 +12,16 @@ class InitViewController: UIViewController {
 
   
     
+    @IBOutlet weak var button1: UIButton!
+    
+    @IBAction func button1(_ sender: Any) {
+        
+    }
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        spinner.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
     

@@ -23,6 +23,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                         <state key="normal" title=" 약국 찾기"/>
                                         <connections>
+                                            <action selector="button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPp-qH-qs4"/>
                                             <segue destination="Z1u-yH-D4a" kind="show" id="Hl0-c0-S89"/>
                                         </connections>
                                     </button>
@@ -58,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button1" destination="CIb-s5-UQw" id="rMU-Jo-OXx"/>
                         <outlet property="spinner" destination="rjb-bH-D1e" id="G8H-mz-cl4"/>
                     </connections>
                 </viewController>
