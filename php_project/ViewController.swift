@@ -12,7 +12,7 @@ import RealmSwift
 
 class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet var calendar: FSCalendar!
    
     @IBOutlet var memoTable: UITableView!
@@ -67,6 +67,7 @@ class ViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appdelegate.shouldSupportAllOrientation = false
         calendar?.allowsMultipleSelection = false
         calendar?.delegate = self
         calendar?.dataSource = self
