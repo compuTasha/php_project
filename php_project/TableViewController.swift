@@ -39,6 +39,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
                 realm.add(insertData)
             }
         }
+        
+        self.tableView.rowHeight = 140
+        //self.tableView.estimatedRowHeight = 140
 
     }
     
@@ -80,11 +83,14 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath) as! CustomCell
         
-        cell.textLabel?.text = filteredData[indexPath.row].BIZPLC_NM
+        cell.backgroundColor = UIColor.clear
+        //cell.textLabel?.text = filteredData[indexPath.row].BIZPLC_NM
+        cell.nameLabel.text = filteredData[indexPath.row].BIZPLC_NM
+        cell.distanceLabel.text = "1.0km"
+        cell.subjectLabel.text = filteredData[indexPath.row].TREAT_SBJECT_CONT_INFO
         
-        //cell.textLabel?.text = data[indexPath.row].BIZPLC_NM
         // Configure the cell...
     
         return cell
