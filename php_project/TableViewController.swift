@@ -84,7 +84,14 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath) as! CustomCell
         
         cell.backgroundColor = UIColor.clear
-        //cell.textLabel?.text = filteredData[indexPath.row].BIZPLC_NM
+        cell.box.layer.borderWidth = 0.5
+        cell.box.layer.cornerRadius = 10
+        cell.box.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        cell.box.layer.masksToBounds = false
+        cell.box.layer.shadowColor = UIColor.black.cgColor
+        cell.box.layer.shadowOffset = CGSize(width: 1, height: 2)
+        cell.box.layer.shadowOpacity = 0.07
+        cell.box.layer.shadowRadius = 1.5
         cell.nameLabel.text = filteredData[indexPath.row].BIZPLC_NM
         cell.distanceLabel.text = "1.0km"
         cell.subjectLabel.text = filteredData[indexPath.row].TREAT_SBJECT_CONT_INFO
