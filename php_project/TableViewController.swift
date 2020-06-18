@@ -44,7 +44,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredData = searchText.isEmpty ? data : data.filter({(hospital: HospitalData) -> Bool in
-            return hospital.BIZPLC_NM.contains(searchText)
+            var categoryMatch = hospital.TREAT_SBJECT_CONT_INFO.contains(searchText)
+            var stringMatch = hospital.BIZPLC_NM.contains(searchText)
+            return categoryMatch && (stringMatch != nil)
         })
         
         tableView.reloadData()
