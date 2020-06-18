@@ -9,8 +9,10 @@
 import UIKit
 import RealmSwift
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let data = DataLoader().hospitalData
     
     let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
@@ -39,7 +41,9 @@ class TableViewController: UITableViewController {
 
     }
      
-    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//    }
     
     // MARK: - Table view data source
     
