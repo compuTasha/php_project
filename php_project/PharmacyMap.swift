@@ -57,7 +57,8 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
             mapView.showsUserLocation = true//위치 보기
             
             let coor = locationManager.location?.coordinate
-            let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
+          
+            let myLocation = CLLocation(latitude: coor?.latitude ?? 37.2839294 , longitude: coor?.longitude ?? 127.076259)
             
             for i in 0..<data.count {
                     let insertData = Pharmacy()
