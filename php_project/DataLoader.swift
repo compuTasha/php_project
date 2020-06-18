@@ -23,7 +23,9 @@ public class DataLoader {
 //    }
 //    var lati: Double = 37.2839294
 //    var longi: Double = 127.0762599
-    var mylocation = CLLocation(latitude: 37.2839294, longitude: 127.0762599)
+    let locationManager = CLLocationManager()
+    
+//    var mylocation = CLLocation(latitude: 37.2839294, longitude: 127.0762599)
     
     init() {
         load()
@@ -89,10 +91,10 @@ public class DataLoader {
             }
         }
     }
-    
-    func distance(to location: CLLocation) -> CLLocationDistance {
-        return location.distance(from: self.mylocation)
-    }
+//    
+//    func distance(to location: CLLocation) -> CLLocationDistance {
+//        return location.distance(from: self.mylocation)
+//    }
     
     // 여기서 내 위치 기준으로 정렬할 수 있을 거 같음, 지금은 이름으로 정렬
     func sort() {
@@ -106,7 +108,9 @@ public class DataLoader {
             print(long)
             let tempLocation = CLLocation(latitude: lat, longitude: long)
             print(tempLocation)
-            let meter = distance(to: tempLocation)
+            let coor = locationManager.location?.coordinate
+            let mylocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)//현재 위치 계산
+            let meter = mylocation.distance(from: tempLocation)
             print(meter)
             hospitalData[i].SPECL_AMBLNC_VCNT = String(meter * 0.001)
         }
