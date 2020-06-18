@@ -14,15 +14,16 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     let data = DataLoader().hospitalData
-    
     let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
-
+    var filteredData = [HospitalData]()
     
      override func viewDidLoad() {
          super.viewDidLoad()
          // Do any additional setup after loading the view.
         
         //print(data)
+        
+        filteredData = data
         
         for i in 0..<data.count {
             var insertData = Hospital()
@@ -40,10 +41,26 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         }
 
     }
-     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = searchText.isEmpty ? data : data.filter({(hospital: HospitalData) -> Bool in
+            return hospital.BIZPLC_NM.contains(searchText)
+        })
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        filteredData = data
+        tableView.reloadData()
+    }
     
     // MARK: - Table view data source
     
@@ -56,14 +73,16 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return filteredData.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath)
-
-        cell.textLabel?.text = data[indexPath.row].BIZPLC_NM
+        
+        cell.textLabel?.text = filteredData[indexPath.row].BIZPLC_NM
+        
+        //cell.textLabel?.text = data[indexPath.row].BIZPLC_NM
         // Configure the cell...
     
         return cell
@@ -73,7 +92,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         if segue.identifier == "showDetail" {
             if let detailController = segue.destination as? DetailViewController {
                 detailController.realm = self.realm
-                detailController.hospitalName = self.data[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
+                detailController.hospitalName = self.filteredData[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
             }
         }
     }
