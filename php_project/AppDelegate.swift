@@ -13,6 +13,16 @@ import CoreLocation
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var locationManager: CLLocationManager?
+    
+    var shouldSupportAllOrientation = true
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask{
+        if shouldSupportAllOrientation == true{
+            return UIInterfaceOrientationMask.all
+        }
+        
+        return UIInterfaceOrientationMask.portrait
+    }
 
 
 
