@@ -10,6 +10,8 @@ import UIKit
 
 class InitViewController: UIViewController {
 
+  
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
