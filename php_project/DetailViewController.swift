@@ -20,32 +20,40 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var reviewTable: UITableView!
     
-   // let realm = try! Realm()
-    var realm = try! Realm()
-    //let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     var hospitalName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var query = realm.objects(Hospital.self).filter("name = %@", hospitalName).first
+        let query = realm.objects(Hospital.self).filter("name = %@", hospitalName).first
 
         nameLabel.text = query?.name
         addressLabel.text = query?.address
         telLabel.text = query?.telephone
         medinstLabel.text = query?.medinst
         subjectLabel.text = query?.subject
-
+        
+//        nameLabel.sizeToFit()
+//        addressLabel.sizeToFit()
+//        telLabel.sizeToFit()
+//        medinstLabel.sizeToFit()
+//        subjectLabel.sizeToFit()
+//
+//        nameLabel.numberOfLines = 0
+//        addressLabel.numberOfLines = 0
+//        telLabel.numberOfLines = 0
+//        medinstLabel.numberOfLines = 0
+//        subjectLabel.numberOfLines = 0
     }
     
     @IBAction func addReviewButton(_ sender: Any) {
-        var query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        var query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text!).first
                 
         try! realm.write {
             query?.reviews.append(reviewTextView.text)
         }
         
-        query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text!).first
     
         print(query?.reviews)
         
@@ -53,7 +61,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text!).first
         
         return (query?.reviews.count)!
     }
@@ -63,14 +71,14 @@ class DetailViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        let query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text!).first
         let review = query?.reviews[indexPath.row]
         cell.textLabel!.text = review
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text).first
+        var query = realm.objects(Hospital.self).filter("address = %@", addressLabel.text!).first
 
         if segue.identifier == "showMap" {
             if let mapController = segue.destination as? mapController {
