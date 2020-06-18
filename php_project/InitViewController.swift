@@ -21,7 +21,7 @@ class InitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        spinner.hidesWhenStopped = true
+       // spinner.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
     
