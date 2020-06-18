@@ -100,23 +100,25 @@ public class DataLoader {
     func sort() {
 //        self.hospitalData = self.hospitalData.sorted(by: { $0.BIZPLC_NM < $1.BIZPLC_NM})
 //        self.pharmacyData = self.pharmacyData.sorted(by: { $0.BIZPLC_NM < $1.BIZPLC_NM})
+        
+        let coor = locationManager.location?.coordinate
+        let mylocation = CLLocation(latitude: coor?.latitude ?? 37.2839294 , longitude: coor?.longitude ?? 127.076259)//현재 위치 계산
 
         for i in 0..<hospitalData.count {
             let lat = (hospitalData[i].REFINE_WGS84_LAT as NSString).doubleValue
-            print(lat)
+//            print(lat)
             let long = (hospitalData[i].REFINE_WGS84_LOGT as NSString).doubleValue
-            print(long)
+//            print(long)
             let tempLocation = CLLocation(latitude: lat, longitude: long)
-            print(tempLocation)
-            let coor = locationManager.location?.coordinate
-            let mylocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)//현재 위치 계산
+//            print(tempLocation)
             let meter = mylocation.distance(from: tempLocation)
-            print(meter)
-            hospitalData[i].SPECL_AMBLNC_VCNT = String(meter * 0.001)
+//            print(meter)
+            hospitalData[i].SPECL_AMBLNC_VCNT = String(format: "%.2f", meter * 0.001)
         }
         
         for i in 0..<hospitalData.count {
             self.hospitalData = self.hospitalData.sorted(by: { $0.SPECL_AMBLNC_VCNT < $1.SPECL_AMBLNC_VCNT})
         }
     }
+
 }
