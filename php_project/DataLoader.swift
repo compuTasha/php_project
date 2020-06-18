@@ -64,12 +64,12 @@ public class DataLoader {
             do {
                 let data = try Data(contentsOf: filephaLocation)
                 let jsonDecoder = JSONDecoder()
-                let dataFromJson = try jsonDecoder.decode([PharmacyData].self, from: data)
+                let dataFromJson = try jsonDecoder.decode([EmergencyData].self, from: data)
                 
                 // don't add if address is nil
                 for i in 0..<dataFromJson.count {
                     if(dataFromJson[i].REFINE_ROADNM_ADDR != "") {
-                        self.pharmacyData.append(dataFromJson[i])
+                        self.emergencyData.append(dataFromJson[i])
                     }
                 }
                 
