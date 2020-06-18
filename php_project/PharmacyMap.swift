@@ -89,6 +89,7 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
     
         @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
             if sender.selectedSegmentIndex == 0{
+                mapView.removeAnnotations(mapView.annotations)
                     for i in 0..<data.count {
                         let insertData = Pharmacy()
                             insertData.name = data[i].BIZPLC_NM
@@ -107,16 +108,16 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
             }
             else if sender.selectedSegmentIndex == 1 {
                  mapView.removeAnnotations(mapView.annotations)
-//                for i in 0..<data1.count {
-//                        let insertData1 = Pharmacy()
-//                            insertData1.name = data1[i].BIZPLC_NM
-//                            insertData1.address = data1[i].REFINE_ROADNM_ADDR
-//                            insertData1.latitude = (data1[i].REFINE_WGS84_LAT as NSString).doubleValue
-//                            insertData1.longitude = (data1[i].REFINE_WGS84_LOGT as NSString).doubleValue
-//
-//                            setAnnotation(latitudeValue: insertData1.latitude , longitudeValue: insertData1.longitude, delta: 1, title: insertData1.name, subtitile: insertData1.address)
-//                        }
-                setAnnotation(latitudeValue: 37.391218, longitudeValue: 126.955063, delta: 1, title: "새봄 온누리 약국", subtitile: "야야야")
+                for i in 0..<data1.count {
+                        let insertData1 = Emergency()
+                            insertData1.name = data1[i].BIZPLC_NM
+                            insertData1.address = data1[i].REFINE_ROADNM_ADDR
+                            insertData1.latitude = (data1[i].REFINE_WGS84_LAT as NSString).doubleValue
+                            insertData1.longitude = (data1[i].REFINE_WGS84_LOGT as NSString).doubleValue
+
+                            setAnnotation(latitudeValue: insertData1.latitude , longitudeValue: insertData1.longitude, delta: 1, title: insertData1.name, subtitile: insertData1.address)
+                        }
+
                 }
             }
         }
