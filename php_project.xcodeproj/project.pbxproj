@@ -33,6 +33,7 @@
 		CE90D8F9249A39C100725991 /* hospital_data.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90D8F8249A39C100725991 /* hospital_data.json */; };
 		CE90D8FB249A3B8600725991 /* PharmacyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FA249A3B8600725991 /* PharmacyData.swift */; };
 		CE90D8FD249A3BEB00725991 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FC249A3BEB00725991 /* Pharmacy.swift */; };
+		CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,7 @@
 		CE90D8F8249A39C100725991 /* hospital_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hospital_data.json; sourceTree = "<group>"; };
 		CE90D8FA249A3B8600725991 /* PharmacyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyData.swift; sourceTree = "<group>"; };
 		CE90D8FC249A3BEB00725991 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
+		CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emergency_pharmacy.json; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 		CE1C23A02493CBB000AFA8D8 /* php_project */ = {
 			isa = PBXGroup;
 			children = (
+				CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */,
 				CE90D8F6249A393B00725991 /* pharmacy.json */,
 				CE90D8F8249A39C100725991 /* hospital_data.json */,
 				CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */,
@@ -227,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */,
 				CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */,
 				01DE2188249BA1E3004D8D4B /* 1팀_회의록.pdf in Resources */,
 				CE90D8F9249A39C100725991 /* hospital_data.json in Resources */,
