@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01DE2188249BA1E3004D8D4B /* 1팀_회의록.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01DE2187249BA1E3004D8D4B /* 1팀_회의록.pdf */; };
 		60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F487902499FDC100784B10 /* PharmacyMap.swift */; };
+		60F48797249BC2C700784B10 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F48796249BC2C700784B10 /* InitViewController.swift */; };
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
 		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -35,6 +36,8 @@
 		CE90D8FB249A3B8600725991 /* PharmacyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FA249A3B8600725991 /* PharmacyData.swift */; };
 		CE90D8FD249A3BEB00725991 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D8FC249A3BEB00725991 /* Pharmacy.swift */; };
 		CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */; };
+		CE90D901249BCB7200725991 /* EmergencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D900249BCB7200725991 /* EmergencyData.swift */; };
+		CE90D903249BCE0400725991 /* Emergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D902249BCE0400725991 /* Emergency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +61,7 @@
 		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
 		60F487902499FDC100784B10 /* PharmacyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMap.swift; sourceTree = "<group>"; };
+		60F48796249BC2C700784B10 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		60F5E49C24941318008C1592 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
 		869A4687249612C100B9D9D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		869A46892496136400B9D9D5 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		CE90D8FA249A3B8600725991 /* PharmacyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyData.swift; sourceTree = "<group>"; };
 		CE90D8FC249A3BEB00725991 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
 		CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emergency_pharmacy.json; sourceTree = "<group>"; };
+		CE90D900249BCB7200725991 /* EmergencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyData.swift; sourceTree = "<group>"; };
+		CE90D902249BCE0400725991 /* Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency.swift; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,12 +168,15 @@
 				CE1C23AC2493CBB300AFA8D8 /* LaunchScreen.storyboard */,
 				CE1C23AF2493CBB300AFA8D8 /* Info.plist */,
 				60F5E49C24941318008C1592 /* mapController.swift */,
-				869A46892496136400B9D9D5 /* Hospital.swift */,
-				CE90D8FC249A3BEB00725991 /* Pharmacy.swift */,
-				CE856466249683B900D19B1C /* HospitalData.swift */,
 				CE856468249684E600D19B1C /* DataLoader.swift */,
+				CE90D902249BCE0400725991 /* Emergency.swift */,
+				CE90D900249BCB7200725991 /* EmergencyData.swift */,
+				869A46892496136400B9D9D5 /* Hospital.swift */,
+				CE856466249683B900D19B1C /* HospitalData.swift */,
+				CE90D8FC249A3BEB00725991 /* Pharmacy.swift */,
 				60F487902499FDC100784B10 /* PharmacyMap.swift */,
 				CE90D8FA249A3B8600725991 /* PharmacyData.swift */,
+				60F48796249BC2C700784B10 /* InitViewController.swift */,
 			);
 			path = php_project;
 			sourceTree = "<group>";
@@ -300,7 +309,10 @@
 				CE90D8FB249A3B8600725991 /* PharmacyData.swift in Sources */,
 				60F5E49D24941318008C1592 /* mapController.swift in Sources */,
 				CE90D8FD249A3BEB00725991 /* Pharmacy.swift in Sources */,
+				60F48797249BC2C700784B10 /* InitViewController.swift in Sources */,
+				CE90D903249BCE0400725991 /* Emergency.swift in Sources */,
 				60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */,
+				CE90D901249BCB7200725991 /* EmergencyData.swift in Sources */,
 				869A468A2496136400B9D9D5 /* Hospital.swift in Sources */,
 				CE1C23B62494093300AFA8D8 /* TableViewController.swift in Sources */,
 				869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */,
