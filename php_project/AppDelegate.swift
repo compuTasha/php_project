@@ -8,8 +8,13 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
+
+let allHospital = DataLoader().hospitalData
+let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var locationManager: CLLocationManager?
@@ -30,6 +35,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
+        
+        for i in 0..<allHospital.count {
+            let insertData = Hospital()
+            insertData.name = allHospital[i].BIZPLC_NM
+            insertData.address = allHospital[i].REFINE_ROADNM_ADDR
+            insertData.latitude = (allHospital[i].REFINE_WGS84_LAT as NSString).doubleValue
+            insertData.longitude = (allHospital[i].REFINE_WGS84_LOGT as NSString).doubleValue
+            insertData.telephone = allHospital[i].LOCPLC_FACLT_TELNO_DTLS
+            insertData.medinst = allHospital[i].MEDINST_ASORTMT_NM
+            insertData.subject = allHospital[i].TREAT_SBJECT_CONT_INFO
+            
+            try! realm.write {
+                realm.add(insertData)
+            }
+        }
+        
         return true
     }
 

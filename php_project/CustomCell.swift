@@ -19,14 +19,14 @@ class CustomCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        box.layer.borderWidth = 0.5
-        box.layer.cornerRadius = 5
-        box.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
-        box.layer.masksToBounds = false
-        box.layer.shadowColor = UIColor.black.cgColor
-        box.layer.shadowOffset = CGSize(width: 1, height: 2)
-        box.layer.shadowOpacity = 0.07
-        box.layer.shadowRadius = 1.5
+//        box.layer.borderWidth = 0.5
+//        box.layer.cornerRadius = 5
+//        box.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+//        box.layer.masksToBounds = false
+//        box.layer.shadowColor = UIColor.black.cgColor
+//        box.layer.shadowOffset = CGSize(width: 1, height: 2)
+//        box.layer.shadowOpacity = 0.07
+//        box.layer.shadowRadius = 1.5
         
         
     }

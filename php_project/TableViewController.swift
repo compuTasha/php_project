@@ -9,12 +9,11 @@
 import UIKit
 import RealmSwift
 
+
 class TableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let data = DataLoader().hospitalData
-    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     var filteredData = [HospitalData]()
     
      override func viewDidLoad() {
@@ -23,35 +22,34 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         
         //print(data)
         
-        filteredData = data
+        filteredData = allHospital
         
-        for i in 0..<data.count {
-            var insertData = Hospital()
-            insertData.name = data[i].BIZPLC_NM
-            insertData.address = data[i].REFINE_ROADNM_ADDR
-            insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
-            insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
-            insertData.telephone = data[i].LOCPLC_FACLT_TELNO_DTLS
-            insertData.medinst = data[i].MEDINST_ASORTMT_NM
-            insertData.subject = data[i].TREAT_SBJECT_CONT_INFO
-            
-            try! realm.write {
-                realm.add(insertData)
-            }
-        }
+//        for i in 0..<data.count {
+//            var insertData = Hospital()
+//            insertData.name = data[i].BIZPLC_NM
+//            insertData.address = data[i].REFINE_ROADNM_ADDR
+//            insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
+//            insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
+//            insertData.telephone = data[i].LOCPLC_FACLT_TELNO_DTLS
+//            insertData.medinst = data[i].MEDINST_ASORTMT_NM
+//            insertData.subject = data[i].TREAT_SBJECT_CONT_INFO
+//
+//            try! realm.write {
+//                realm.add(insertData)
+//            }
+//        }
         
         self.tableView.rowHeight = 140
-        //self.tableView.estimatedRowHeight = 140
 
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = searchText.isEmpty ? data : data.filter({(hospital: HospitalData) -> Bool in
+        self.filteredData = searchText.isEmpty ? allHospital : allHospital.filter({(hospital: HospitalData) -> Bool in
             var categoryMatch = hospital.TREAT_SBJECT_CONT_INFO.contains(searchText)
             var stringMatch = hospital.BIZPLC_NM.contains(searchText)
-            return categoryMatch && (stringMatch != nil)
+            return categoryMatch || stringMatch
         })
-        
+
         tableView.reloadData()
     }
     
@@ -63,7 +61,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        filteredData = data
+        filteredData = allHospital
         tableView.reloadData()
     }
     
@@ -99,7 +97,6 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let detailController = segue.destination as? DetailViewController {
-                detailController.realm = self.realm
                 detailController.hospitalName = self.filteredData[tableView.indexPathForSelectedRow!.row].BIZPLC_NM
             }
         }
