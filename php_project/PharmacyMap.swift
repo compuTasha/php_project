@@ -15,10 +15,10 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
     let data = DataLoader().pharmacyData
     let data1 = DataLoader().emergencyData
     
-    var latitude: Double = 0    // 디비에서 쿼리해온 위도
-    var longitude: Double = 0 // 디비애서 쿼리해온 경도
-    var Title : String = ""  //디비에서 쿼리해온 이름
-    var subtitle = ""   //디비에서 쿼리해온 번호 or 주소
+//    var latitude: Double = 0    // 디비에서 쿼리해온 위도
+//    var longitude: Double = 0 // 디비애서 쿼리해온 경도
+//    var Title : String = ""  //디비에서 쿼리해온 이름
+//    var subtitle = ""   //디비에서 쿼리해온 번호 or 주소
     
     let locationManager = CLLocationManager()
     
@@ -48,6 +48,7 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
        
     
         override func viewDidLoad() {
+            
             super.viewDidLoad()
             mapView.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest//정확도 최고로 설정
@@ -55,14 +56,17 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
             locationManager.startUpdatingLocation()//위치업데이트 시작
             mapView.showsUserLocation = true//위치 보기
             
+            let coor = locationManager.location?.coordinate
+            let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
+            
             for i in 0..<data.count {
                     let insertData = Pharmacy()
                         insertData.name = data[i].BIZPLC_NM
                         insertData.address = data[i].REFINE_ROADNM_ADDR
                         insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
                         insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
-                    let coor = locationManager.location?.coordinate
-                let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
+//                    let coor = locationManager.location?.coordinate
+//                let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
                     let pharmacy = CLLocation(latitude: insertData.latitude, longitude: insertData.longitude)
                     let distanceInMeters =  myLocation.distance(from: pharmacy)
                     if(distanceInMeters <= 3000){
@@ -90,14 +94,16 @@ class PharmacyMap: UIViewController, MKMapViewDelegate {
         @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
             if sender.selectedSegmentIndex == 0{
                 mapView.removeAnnotations(mapView.annotations)
+                let coor = locationManager.location?.coordinate
+                let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
                     for i in 0..<data.count {
                         let insertData = Pharmacy()
                             insertData.name = data[i].BIZPLC_NM
                             insertData.address = data[i].REFINE_ROADNM_ADDR
                             insertData.latitude = (data[i].REFINE_WGS84_LAT as NSString).doubleValue
                             insertData.longitude = (data[i].REFINE_WGS84_LOGT as NSString).doubleValue
-                        let coor = locationManager.location?.coordinate
-                        let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
+//                        let coor = locationManager.location?.coordinate
+//                        let myLocation = CLLocation(latitude: coor!.latitude , longitude: coor!.longitude)
                         let pharmacy = CLLocation(latitude: insertData.latitude, longitude: insertData.longitude)
                         let distanceInMeters =  myLocation.distance(from: pharmacy)
                         if(distanceInMeters <= 3000){
