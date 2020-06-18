@@ -10,9 +10,10 @@ import UIKit
 import RealmSwift
 
 
-class TableViewController: UITableViewController, UISearchBarDelegate {
+class TableViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
     var filteredData = [HospitalData]()
     
@@ -74,13 +75,13 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     }
     */
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return filteredData.count
     }
 
    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hospitalCell", for: indexPath) as! CustomCell
         
         cell.backgroundColor = UIColor.clear
