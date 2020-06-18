@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01DE2188249BA1E3004D8D4B /* 1팀_회의록.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 01DE2187249BA1E3004D8D4B /* 1팀_회의록.pdf */; };
 		60F487912499FDC100784B10 /* PharmacyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F487902499FDC100784B10 /* PharmacyMap.swift */; };
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
 		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01DE2187249BA1E3004D8D4B /* 1팀_회의록.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "1팀_회의록.pdf"; sourceTree = "<group>"; };
 		067CFDE14FEB8527E02979BC /* Pods_php_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_php_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1616C088A273E41131AC3660 /* Pods-php_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.release.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.release.xcconfig"; sourceTree = "<group>"; };
 		60F487902499FDC100784B10 /* PharmacyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMap.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01DE2184249BA12A004D8D4B /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				01DE2187249BA1E3004D8D4B /* 1팀_회의록.pdf */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
 		86F87AA42493CFC80018345D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		CE1C23952493CBB000AFA8D8 = {
 			isa = PBXGroup;
 			children = (
+				01DE2184249BA12A004D8D4B /* Documents */,
 				86F87AA12493CFB90018345D /* Realm.framework */,
 				86F87AA02493CFB70018345D /* RealmSwift.framework */,
 				CE1C23A02493CBB000AFA8D8 /* php_project */,
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */,
+				01DE2188249BA1E3004D8D4B /* 1팀_회의록.pdf in Resources */,
 				CE90D8F9249A39C100725991 /* hospital_data.json in Resources */,
 				CE90D8F7249A393B00725991 /* pharmacy.json in Resources */,
 				CE1C23AB2493CBB300AFA8D8 /* Assets.xcassets in Resources */,
