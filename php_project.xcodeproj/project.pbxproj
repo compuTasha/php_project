@@ -92,6 +92,7 @@
 		CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emergency_pharmacy.json; sourceTree = "<group>"; };
 		CE90D900249BCB7200725991 /* EmergencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyData.swift; sourceTree = "<group>"; };
 		CE90D902249BCE0400725991 /* Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency.swift; sourceTree = "<group>"; };
+		CE90D906249C369B00725991 /* 모앱_최종발표.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "모앱_최종발표.key"; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +115,7 @@
 		01DE2184249BA12A004D8D4B /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				CE90D906249C369B00725991 /* 모앱_최종발표.key */,
 				01DE2187249BA1E3004D8D4B /* 1팀_회의록.pdf */,
 			);
 			path = Documents;
