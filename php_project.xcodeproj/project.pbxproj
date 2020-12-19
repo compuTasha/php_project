@@ -43,11 +43,6 @@
 		CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */ = {isa = PBXBuildFile; fileRef = CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */; };
 		CE90D901249BCB7200725991 /* EmergencyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D900249BCB7200725991 /* EmergencyData.swift */; };
 		CE90D903249BCE0400725991 /* Emergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D902249BCE0400725991 /* Emergency.swift */; };
-		CEDAE635258E05680033F42A /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE630258E05680033F42A /* main.png */; };
-		CEDAE636258E05680033F42A /* cus_phar.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE631258E05680033F42A /* cus_phar.png */; };
-		CEDAE637258E05680033F42A /* cus_hos.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE632258E05680033F42A /* cus_hos.png */; };
-		CEDAE63E258E063C0033F42A /* cus_cal.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE63C258E063C0033F42A /* cus_cal.png */; };
-		CEDAE63F258E063C0033F42A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE63D258E063C0033F42A /* line.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,10 +71,11 @@
 		60F487902499FDC100784B10 /* PharmacyMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMap.swift; sourceTree = "<group>"; };
 		60F48796249BC2C700784B10 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		60F5E49C24941318008C1592 /* mapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapController.swift; sourceTree = "<group>"; };
-		787AB023258E020E006B3EE0 /* cus_hos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cus_hos.png; sourceTree = "<group>"; };
-		787AB024258E020E006B3EE0 /* cus_phar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cus_phar.png; sourceTree = "<group>"; };
-		787AB028258E024B006B3EE0 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
-		787AB029258E024B006B3EE0 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		787AB02E258E0A04006B3EE0 /* calendar_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_img.png; sourceTree = "<group>"; };
+		787AB02F258E0A04006B3EE0 /* hospital_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_img.png; sourceTree = "<group>"; };
+		787AB030258E0A04006B3EE0 /* line_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_img.png; sourceTree = "<group>"; };
+		787AB031258E0A04006B3EE0 /* pharmacy_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pharmacy_img.png; sourceTree = "<group>"; };
+		787AB032258E0A04006B3EE0 /* main_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_img.png; sourceTree = "<group>"; };
 		869A4687249612C100B9D9D5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		869A46892496136400B9D9D5 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		86C3AD07249BADDD00B358A1 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -104,11 +100,6 @@
 		CE90D900249BCB7200725991 /* EmergencyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyData.swift; sourceTree = "<group>"; };
 		CE90D902249BCE0400725991 /* Emergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergency.swift; sourceTree = "<group>"; };
 		CE90D906249C369B00725991 /* 모앱_최종발표.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "모앱_최종발표.key"; sourceTree = "<group>"; };
-		CEDAE630258E05680033F42A /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
-		CEDAE631258E05680033F42A /* cus_phar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cus_phar.png; sourceTree = "<group>"; };
-		CEDAE632258E05680033F42A /* cus_hos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cus_hos.png; sourceTree = "<group>"; };
-		CEDAE63C258E063C0033F42A /* cus_cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cus_cal.png; sourceTree = "<group>"; };
-		CEDAE63D258E063C0033F42A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		DB782A03FBCE7524BEDB72F7 /* Pods-php_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-php_project.debug.xcconfig"; path = "Target Support Files/Pods-php_project/Pods-php_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,7 +155,6 @@
 				CE1C239F2493CBB000AFA8D8 /* Products */,
 				86F87AA42493CFC80018345D /* Frameworks */,
 				8C49D62B26C5D4A7BB388D7E /* Pods */,
-				CEDAE63B258E05FF0033F42A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,18 +170,16 @@
 			isa = PBXGroup;
 			children = (
 				CE90D8FE249BAAC000725991 /* emergency_pharmacy.json */,
+				787AB02E258E0A04006B3EE0 /* calendar_img.png */,
+				787AB02F258E0A04006B3EE0 /* hospital_img.png */,
+				787AB030258E0A04006B3EE0 /* line_img.png */,
+				787AB032258E0A04006B3EE0 /* main_img.png */,
+				787AB031258E0A04006B3EE0 /* pharmacy_img.png */,
 				CE90D8F6249A393B00725991 /* pharmacy.json */,
 				CE90D8F8249A39C100725991 /* hospital_data.json */,
-				787AB023258E020E006B3EE0 /* cus_hos.png */,
-				787AB024258E020E006B3EE0 /* cus_phar.png */,
 				CE1C23A12493CBB000AFA8D8 /* AppDelegate.swift */,
 				CE1C23A32493CBB000AFA8D8 /* SceneDelegate.swift */,
 				CE1C23A52493CBB000AFA8D8 /* ViewController.swift */,
-				CEDAE632258E05680033F42A /* cus_hos.png */,
-				CEDAE631258E05680033F42A /* cus_phar.png */,
-				CEDAE630258E05680033F42A /* main.png */,
-				CEDAE63C258E063C0033F42A /* cus_cal.png */,
-				CEDAE63D258E063C0033F42A /* line.png */,
 				86C3AD07249BADDD00B358A1 /* CustomCell.swift */,
 				CE1C23B52494093300AFA8D8 /* TableViewController.swift */,
 				869A4687249612C100B9D9D5 /* DetailViewController.swift */,
@@ -214,15 +202,6 @@
 				60F48796249BC2C700784B10 /* InitViewController.swift */,
 			);
 			path = php_project;
-			sourceTree = "<group>";
-		};
-		CEDAE63B258E05FF0033F42A /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				787AB028258E024B006B3EE0 /* main.png */,
-				787AB029258E024B006B3EE0 /* line.png */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,14 +265,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDAE637258E05680033F42A /* cus_hos.png in Resources */,
 				CE90D8FF249BAAC000725991 /* emergency_pharmacy.json in Resources */,
-				CEDAE63E258E063C0033F42A /* cus_cal.png in Resources */,
-				787AB027258E020F006B3EE0 /* cus_phar.png in Resources */,
+				787AB033258E0A05006B3EE0 /* calendar_img.png in Resources */,
 				CE1C23AE2493CBB300AFA8D8 /* LaunchScreen.storyboard in Resources */,
+				787AB037258E0A05006B3EE0 /* main_img.png in Resources */,
+				787AB034258E0A05006B3EE0 /* hospital_img.png in Resources */,
 				01DE21A5249BD5D3004D8D4B /* small_blue_med.png in Resources */,
 				01DE2188249BA1E3004D8D4B /* 1팀_회의록.pdf in Resources */,
-				CEDAE636258E05680033F42A /* cus_phar.png in Resources */,
+				787AB036258E0A05006B3EE0 /* pharmacy_img.png in Resources */,
+				787AB035258E0A05006B3EE0 /* line_img.png in Resources */,
 				01DE21A6249BD5D3004D8D4B /* small_blue_cal.png in Resources */,
 				CE90D8F9249A39C100725991 /* hospital_data.json in Resources */,
 				787AB026258E020F006B3EE0 /* cus_hos.png in Resources */,
@@ -301,7 +281,6 @@
 				CE90D8F7249A393B00725991 /* pharmacy.json in Resources */,
 				CE1C23AB2493CBB300AFA8D8 /* Assets.xcassets in Resources */,
 				01DE21A4249BD5D3004D8D4B /* small_blue_hos.png in Resources */,
-				CEDAE635258E05680033F42A /* main.png in Resources */,
 				CE1C23A92493CBB000AFA8D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
