@@ -16,8 +16,6 @@
 		60F5E49D24941318008C1592 /* mapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5E49C24941318008C1592 /* mapController.swift */; };
 		787AB026258E020F006B3EE0 /* cus_hos.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AB023258E020E006B3EE0 /* cus_hos.png */; };
 		787AB027258E020F006B3EE0 /* cus_phar.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AB024258E020E006B3EE0 /* cus_phar.png */; };
-		787AB02A258E024C006B3EE0 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AB028258E024B006B3EE0 /* main.png */; };
-		787AB02B258E024C006B3EE0 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 787AB029258E024B006B3EE0 /* line.png */; };
 		869A468324960FA500B9D9D5 /* Pods_php_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; };
 		869A468424960FA500B9D9D5 /* Pods_php_project.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 067CFDE14FEB8527E02979BC /* Pods_php_project.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		869A4688249612C100B9D9D5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A4687249612C100B9D9D5 /* DetailViewController.swift */; };
@@ -298,11 +296,9 @@
 				CEDAE636258E05680033F42A /* cus_phar.png in Resources */,
 				01DE21A6249BD5D3004D8D4B /* small_blue_cal.png in Resources */,
 				CE90D8F9249A39C100725991 /* hospital_data.json in Resources */,
-				787AB02A258E024C006B3EE0 /* main.png in Resources */,
 				787AB026258E020F006B3EE0 /* cus_hos.png in Resources */,
 				CEDAE63F258E063C0033F42A /* line.png in Resources */,
 				CE90D8F7249A393B00725991 /* pharmacy.json in Resources */,
-				787AB02B258E024C006B3EE0 /* line.png in Resources */,
 				CE1C23AB2493CBB300AFA8D8 /* Assets.xcassets in Resources */,
 				01DE21A4249BD5D3004D8D4B /* small_blue_hos.png in Resources */,
 				CEDAE635258E05680033F42A /* main.png in Resources */,
