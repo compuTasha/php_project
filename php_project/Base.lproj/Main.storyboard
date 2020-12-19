@@ -34,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u42-Ua-2kW">
                                 <rect key="frame" x="10" y="495" width="394" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="약국 찾기" image="cus_phar.png"/>
+                                <state key="normal" title="약국 찾기" image="pharmacy_img.png"/>
                                 <connections>
                                     <segue destination="Z1u-yH-D4a" kind="show" id="PBd-Vs-vL7"/>
                                 </connections>
@@ -42,7 +42,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqo-OR-mJ0">
                                 <rect key="frame" x="19" y="624" width="359" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="병원 찾기" image="cus_hos.png"/>
+                                <state key="normal" title="병원 찾기" image="hospital_img.png"/>
                                 <connections>
                                     <segue destination="vGl-Dh-SGz" kind="show" id="Pdr-om-YVC"/>
                                 </connections>
@@ -50,28 +50,28 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-x0-aAE">
                                 <rect key="frame" x="20" y="732" width="358" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="건강 기록" image="cus_cal.png"/>
+                                <state key="normal" title="건강 기록" image="calendar_img.png"/>
                                 <connections>
                                     <segue destination="oBf-Dc-9Mk" kind="show" id="q7f-a8-5zn"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="8sd-Gh-6mD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="8sd-Gh-6mD">
                                 <rect key="frame" x="10" y="475" width="394" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-bY-nny">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-bY-nny">
                                 <rect key="frame" x="10" y="589" width="394" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-u0-wgg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-u0-wgg">
                                 <rect key="frame" x="10" y="703" width="394" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-di-A09">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-di-A09">
                                 <rect key="frame" x="10" y="817" width="394" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-8w-rmH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_img.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-8w-rmH">
                                 <rect key="frame" x="-46" y="103" width="506" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -528,10 +528,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cus_cal.png" width="378" height="77"/>
-        <image name="cus_hos.png" width="373" height="69"/>
-        <image name="cus_phar.png" width="394" height="84"/>
-        <image name="line.png" width="327" height="14"/>
-        <image name="main.png" width="540" height="540"/>
+        <image name="calendar_img.png" width="378" height="77"/>
+        <image name="hospital_img.png" width="373" height="69"/>
+        <image name="line_img.png" width="327" height="14"/>
+        <image name="main_img.png" width="540" height="540"/>
+        <image name="pharmacy_img.png" width="394" height="84"/>
     </resources>
 </document>
